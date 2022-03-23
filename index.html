@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <title>LsmellCodePlay</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700' rel='stylesheet' type='text/css'><link rel="stylesheet" href="./style.css">
-
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
 <h1 class="title">Welcome to LsmellCodePlay</h1>
@@ -13,19 +16,27 @@
     <div class="imgtransition">
       <img src="http://intranet.pronabec.edu.pe/Content/themes/nuna_int/img/sami_bienvenida.png" style="max-height: 200px;">
     </div>
-    <div class="comb-container">
+    <div class="comb-container" >
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+      </div>
       <div class="inner-text-description-long">
         <p>Qui est in parvis malis. Duo Reges: constructio interrete. Quae similitudo in genere etiam humano apparet. Negat esse eam, inquit, propter se expetendam. Ita ne hoc quidem modo paria peccata sunt.</p>
         <a href="https://github.com/dmytroyarmak/frontend-dev-resources#conferences" target="_blank" rel="noopener" class="link">read more</a>
         <button role="button" class="close">close</button>
       </div>
-      <div class="comb row2">
+      <div class="comb row2" onclick="showModal()">
         <div class="hex_l">
           <div class="hex_r">
             <div class="hex_inner">
               <div class="inner_span">
                 <span class="inner-text-description-short valign">Nivel 1</span>
-
               </div>
             </div>
           </div>

@@ -242,3 +242,8 @@
   jQuery(document).ready(function($) {
     $('.honeycombs').honeycombs();
   });
+
+  function showModal (){
+    $('#modal1').css('display', 'block');
+    $('#modal1').css('z-index', '9999');
+  }
