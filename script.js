@@ -243,11 +243,29 @@
     $('.honeycombs').honeycombs();
   });
 
-  function showModal (){
-    $('#modal1').css('display', 'block');
-    $('#modal1').css('z-index', '9999');
+  let data = {};
+  async function loadData (){
+    const res = await fetch('./info.json')
+    console.log(res)
+    const flagData =  await res.json();
+    data = flagData.famosos;
+    console.log(data)
+  }
+  loadData();
+  function showModal (id){
+    const info = data.find(ele => ele.id == id)
+    const content = document.getElementById('myModalContent');
+    content.innerHTML = `
+      <h4>${info.nombre}</h4>
+      <p>${info.oficio}</p>
+    `
+    $('#modalInfo').css('display', 'block');
+    $('#modalInfo').css('z-index', '9999');
+    console.log(data)
   }
 
   function hideModal (){
-    $('#modal1').css('display', 'none');
+    $('#modalInfo').css('display', 'none');
   }
+
+  
