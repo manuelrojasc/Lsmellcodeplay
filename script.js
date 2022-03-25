@@ -247,3 +247,7 @@
     $('#modal1').css('display', 'block');
     $('#modal1').css('z-index', '9999');
   }
+
+  function hideModal (){
+    $('#modal1').css('display', 'none');
+  }
