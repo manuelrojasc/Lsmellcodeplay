@@ -3,29 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>LsmellCodePlay</title>
+  <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700' rel='stylesheet' type='text/css'><link rel="stylesheet" href="./style.css">
    <!-- Compiled and minified CSS -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
    <!-- Compiled and minified JavaScript -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   
 </head>
 <body>
 <h1 class="title">Welcome to LsmellCodePlay</h1>
+<div class="wrapper" id="wrapper">
+  <div id="modalInfo" class="modal mymodal">
+    <!-- <div class="modal-header">
+      <h3 class="modal-title">Modal Header</h3>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div> -->
+    <div class="modal-content" id="myModalContent">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+      <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo">
+    </div>
+    <div class="modal-footer">
+      <a onclick="hideModal()" class="modal-close waves-effect waves-green btn-flat">Prueba tus habilidades</a>
+    </div>
+  </div>
 
-<div id="modalInfo" class="modal">
-  <!-- <div class="modal-header">
-    <h3 class="modal-title">Modal Header</h3>
-    <button type="button" class="close" data-dismiss="modal">&times;</button>
-  </div> -->
-  <div class="modal-content" id="myModalContent">
-    <h4>Modal Header</h4>
-    <p>A bunch of text</p>
-    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo">
-  </div>
-  <div class="modal-footer">
-    <a onclick="hideModal()" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-  </div>
 </div>
+
 
 <div class="honeycombs honeycombs-wrapper">
   <div class="honeycombs-inner-wrapper">

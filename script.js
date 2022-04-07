@@ -248,7 +248,7 @@
     const res = await fetch('./data.json')
     console.log(res)
     const flagData =  await res.json();
-    data = flagData.levels;
+    data = flagData.content;
     console.log(data)
   }
   loadData();
@@ -256,16 +256,22 @@
     const info = data.find(ele => ele.id == id)
     const content = document.getElementById('myModalContent');
     content.innerHTML = `
-      <h4>${info.title}</h4>
-      <p>${info.content}</p>
+      <h4 class="containerTitle">${info.title}</h4>
+      <div class="containerInfo">
+        <div class="containerInfo-img"><img src=".${info.icons}"/></div>
+        <p class="containerInfo-text">${info.content}</p>
+      </div>
     `
     $('#modalInfo').css('display', 'block');
     $('#modalInfo').css('z-index', '9999');
+    $('#wrapper').css('display', 'flex');
+    $('#wrapper').css('z-index', '9999');
     console.log(data)
   }
 
   function hideModal (){
     $('#modalInfo').css('display', 'none');
+    $('#wrapper').css('display', 'none');
   }
 
   

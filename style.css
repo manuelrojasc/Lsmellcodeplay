@@ -215,6 +215,45 @@ body {
   color: #005E6A;
 }
 
+.containerTitle{
+  text-align: center;
+  color: #fff;
+  font-family: 'Roboto', serif;
+}
+
+.mymodal{
+  background: rgb(35, 83, 144) !important;
+  border-radius: 8px !important;
+}
+.containerInfo{
+  color: #fff;
+  display: flex;
+  font-family: din-round,sans-serif;
+  font-size: 1.5rem;
+  justify-content: space-between;
+}
+.containerInfo-img{
+  flex-basis: 35%;
+}
+.containerInfo-text{
+  flex-basis: 60%;
+  overflow: auto;
+  height: 250px;
+}
+.containerInfo img{
+  width: 100%;
+}
+.wrapper{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+  align-items: center;
+}
+
 /* .imgtransition {
   height: 200px;
   width: 200px;
