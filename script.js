@@ -245,10 +245,10 @@
 
   let data = {};
   async function loadData (){
-    const res = await fetch('./info.json')
+    const res = await fetch('./data.json')
     console.log(res)
     const flagData =  await res.json();
-    data = flagData.famosos;
+    data = flagData.levels;
     console.log(data)
   }
   loadData();
@@ -256,8 +256,8 @@
     const info = data.find(ele => ele.id == id)
     const content = document.getElementById('myModalContent');
     content.innerHTML = `
-      <h4>${info.nombre}</h4>
-      <p>${info.oficio}</p>
+      <h4>${info.title}</h4>
+      <p>${info.content}</p>
     `
     $('#modalInfo').css('display', 'block');
     $('#modalInfo').css('z-index', '9999');

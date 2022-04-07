@@ -1,0 +1,81 @@
+{
+ "levels":[
+        {     "id":1 ,
+              "nivel":"nivel 1",
+              "title":"Comentarios",
+              "content":"Los comentarios generalmente se crean con las mejores intenciones, cuando el autor se da cuenta de que su código no es intuitivo ni obvio. En tales casos, los comentarios son como un desodorante que enmascara el olor del código sospechoso que podría mejorarse. ",
+              "viñeta":"¿Como podemos identificar este tipo de olor de codigo?",
+              "tip":"El mejor comentario es un buen nombre para un método o clase. ",
+              "icons":"/img/comments.png",
+              "challenge":"identifica el siguiente reto"
+              
+       }, 
+        {     "id":2 ,
+              "nivel":"nivel 2",
+              "title":"Código Duplicado" ,
+              "content":"También hay una duplicación más sutil, cuando partes específicas del código se ven diferentes pero en realidad realizan el mismo trabajo. Este tipo de duplicación puede ser difícil de encontrar y corregir. A veces, la duplicación tiene un propósito. Cuando se apresuran a cumplir los plazos y el código existente es 'casi adecuado' para el trabajo, es posible que los programadores novatos no puedan resistir la tentación de copiar y pegar el código correspondiente. Y en algunos casos, el programador simplemente es demasiado perezoso para ordenar. ",
+              "tip":"Simplificación + brevedad = código que es más fácil de simplificar y más barato de mantener.",
+              "icons":"/img/duplicatecode.png",
+              "challenge":"identifica el siguiente reto",
+              "viñeta":"¿Como podemos identificar este tipo de olor de codigo?"
+       },
+        {     "id":3 ,
+              "nivel":"nivel 3",
+              "title":"Clase larga" ,
+              "content":"Las clases generalmente comienzan pequeñas. Pero con el tiempo, se hinchan a medida que crece el programa.Como también es el caso con los métodos largos, a los programadores generalmente les resulta menos exigente mentalmente colocar una nueva característica en una clase existente que crear una nueva clase para la característica. ",
+              "tip":"Cuando una clase usa demasiados sombreros (funcionales), piense en dividirla ",
+              "icons":"/img/largeclass.png",
+              "challenge":"identifica el siguiente reto",
+              "viñeta":"¿Como podemos identificar este tipo de olor de codigo?"
+       },
+        {     "id":4 ,
+              "nivel":"nivel 4",
+              "title":"Característica envidia" ,
+              "content":"Un método accede a los datos de otro objeto más que a sus propios datos.Este olor puede ocurrir después de que los campos se muevan a una clase de datos. Si este es el caso, es posible que también desee mover las operaciones sobre los datos a esta clase. ",
+              "tip":"Como regla básica, si las cosas cambian al mismo tiempo, debes mantenerlas en el mismo lugar. Por lo general, los datos y las funciones que usan estos datos se cambian juntos (aunque son posibles las excepciones).",
+              "icons":"/img/featureenvy.png",
+              "challenge":"identifica el siguiente reto",
+              "viñeta":"¿Como podemos identificar este tipo de olor de codigo?"
+       },
+        {     "id":5 ,
+              "nivel":"nivel 5",
+              "title":"Método largo" ,
+              "content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "
+       },
+        {     "id":6 ,
+              "nivel":"nivel 6",
+              "title":"Clase de datos" ,
+              "content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "
+       },
+        {     "id":7 ,
+              "nivel":"nivel 7",
+              "title":"Flujo de lava" ,
+              "content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "
+       },
+        {     "id":8 ,
+              "nivel":"nivel 8",
+              "title":"Navaja del ejercito suizo" ,
+              "content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "
+       },
+        {     "id":9 ,
+              "nivel":"nivel 9",
+              "title":"Lista de parámetros larga" ,
+              "content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "
+       },
+        {     "id":10 ,
+              "nivel":"nivel 10",
+              "title":"Legado rechazado" ,
+              "content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "
+       },
+        {"id":11 ,"nivel":"nivel 11","title":"this is a example 1" ,"content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "},
+        {"id":12 ,"nivel":"nivel 12","title":"this is a example 1" ,"content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "},
+        {"id":13 ,"nivel":"nivel 13","title":"this is a example 1" ,"content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "},
+        {"id":14 ,"nivel":"nivel 14","title":"this is a example 1" ,"content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "},
+        {"id":15 ,"nivel":"nivel 15","title":"this is a example 1" ,"content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "},
+        {"id":16 ,"nivel":"nivel 16","title":"this is a example 1","content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "},
+        {"id":17 ,"nivel":"nivel 17","title":"this is a example 1" ,"content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "},
+        {"id":18 ,"nivel":"nivel 18","title":"this is a example 1" ,"content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "}
+ ]  
+
+
+}
