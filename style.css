@@ -254,13 +254,76 @@ body {
   align-items: center;
 }
 
-/* .imgtransition {
-  height: 200px;
-  width: 200px;
-  background:url(./img/sami_bienvenida.png) left bottom;
-  transition:background .5s steps(9, end);
+.imgtransition {
+  position: absolute;
+  right: 15px;
+  bottom: 25px;
+  animation: slidein 3s infinite;
 }
 
+.imgtransition::before{
+  content: "Prueba tus habilidades !";
+  position: absolute;
+  transform: rotate(-45deg);
+  font-size: 1.2rem;
+  color: #1976d2;
+  font-weight: 600;
+  animation: text 3s infinite;
+}
+
+.imgtransition::after{
+  content: "";
+  position: absolute;
+  display: block;
+  bottom:5px;
+  left: 90px;
+  width: 80px;
+  height: 50px;
+  background: #263238;
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 2px #fff ;
+}
+
+/*
 .imgtransition:hover { 
   background-position:-450px top; 
 }  */
+
+
+
+
+@keyframes slidein {
+  0% {
+    right: 10px;
+  }
+  30%{
+    right: 22px;
+  }
+  50%{
+    right: 30px;
+  }
+  70%{
+    right: 22px;
+  }
+  100% {
+    right: 10px;
+  }
+}
+
+@keyframes text{
+  0% {
+    opacity: 0.5;
+  }
+  30%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  70%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
