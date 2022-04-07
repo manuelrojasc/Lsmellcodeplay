@@ -1,5 +1,5 @@
 {
- "levels":[
+ "content":[
         {     "id":1 ,
               "nivel":"nivel 1",
               "title":"Comentarios",
@@ -99,7 +99,117 @@
         {"id":16 ,"nivel":"nivel 16","title":"this is a example 1","content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "},
         {"id":17 ,"nivel":"nivel 17","title":"this is a example 1" ,"content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "},
         {"id":18 ,"nivel":"nivel 18","title":"this is a example 1" ,"content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "}
- ]  
+ ],
+"levels":[
+       {
+              "id":1,
+              "nombre":"nivel 1",
+              "descripcion":"descripcion del nivel 1",
+              "satate":1
+       },
+       {
+              "id":2,
+              "nombre":"nivel 2",
+              "descripcion":"descripcion del nivel 2",
+              "satate":1
+       },
+       {
+              "id":3,
+              "nombre":"nivel 3",
+              "descripcion":"descripcion del nivel 3",
+              "satate":1
+       },
+       {
+              "id":4,
+              "nombre":"nivel 4",
+              "descripcion":"descripcion del nivel 4",
+              "satate":1
+       },
+       {
+              "id":5,
+              "nombre":"nivel 5",
+              "descripcion":"descripcion del nivel 5",
+              "satate":1
+       },
+       {
+              "id":6,
+              "nombre":"nivel 6",
+              "descripcion":"descripcion del nivel 6",
+              "satate":1
+       },
+       {
+              "id":7,
+              "nombre":"nivel 7",
+              "descripcion":"descripcion del nivel 7",
+              "satate":1
+       },
+       {
+              "id":8,
+              "nombre":"nivel 8",
+              "descripcion":"descripcion del nivel 8",
+              "satate":1
+       },
+       {
+              "id":9,
+              "nombre":"nivel 9",
+              "descripcion":"descripcion del nivel 9",
+              "satate":1
+       },
+       {
+              "id":10,
+              "nombre":"nivel 10",
+              "descripcion":"descripcion del nivel 10",
+              "satate":1
+       },
+       {
+              "id":11,
+              "nombre":"nivel 11",
+              "descripcion":"descripcion del nivel 11",
+              "satate":1
+       },
+       {
+              "id":12,
+              "nombre":"nivel 12  ",
+              "descripcion":"descripcion del nivel 12",
+              "satate":1
+       },
+       {
+              "id":13,
+              "nombre":"nivel 13",
+              "descripcion":"descripcion del nivel 13",
+              "satate":1
+       },
+       {
+              "id":14,
+              "nombre":"nivel 14",
+              "descripcion":"descripcion del nivel 14",
+              "satate":1
+       },
+       {
+              "id":15,
+              "nombre":"nivel 15",
+              "descripcion":"descripcion del nivel 15",
+              "satate":1
+       },
+       {
+              "id":16,
+              "nombre":"nivel 16",
+              "descripcion":"descripcion del nivel 16",
+              "satate":1
+       },
+       {
+              "id":17,
+              "nombre":"nivel 17",
+              "descripcion":"descripcion del nivel 17",
+              "satate":1
+       },
+       {
+              "id":18,
+              "nombre":"nivel 18",
+              "descripcion":"descripcion del nivel 18",
+              "satate":1
+       }
+]
 
 
 }
