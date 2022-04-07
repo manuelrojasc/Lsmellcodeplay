@@ -15,7 +15,7 @@
               "title":"Código Duplicado" ,
               "content":"También hay una duplicación más sutil, cuando partes específicas del código se ven diferentes pero en realidad realizan el mismo trabajo. Este tipo de duplicación puede ser difícil de encontrar y corregir. A veces, la duplicación tiene un propósito. Cuando se apresuran a cumplir los plazos y el código existente es 'casi adecuado' para el trabajo, es posible que los programadores novatos no puedan resistir la tentación de copiar y pegar el código correspondiente. Y en algunos casos, el programador simplemente es demasiado perezoso para ordenar. ",
               "tip":"Simplificación + brevedad = código que es más fácil de simplificar y más barato de mantener.",
-              "icons":"/img/duplicatecode.png",
+              "icons":"/img/duplicatedcode.png",
               "challenge":"identifica el siguiente reto",
               "viñeta":"¿Como podemos identificar este tipo de olor de codigo?"
        },
@@ -67,7 +67,11 @@
         {     "id":8 ,
               "nivel":"nivel 8",
               "title":"Navaja del ejercito suizo" ,
-              "content":" son fragmentos de código que menudo se le delegan tareas te todo tipo "
+              "content":" son fragmentos de código que menudo se le delegan tareas te todo tipo ",
+              "challenge":"identifica el siguiente reto",
+              "tip":"Los fragmentos de código son una forma de reducir el tamaño del código. ",
+              "icons":"/img/swissarmyknife.png",
+              "viñeta":"¿Como podemos identificar este tipo de olor de codigo?"
        },
         {     "id":9 ,
               "nivel":"nivel 9",
