@@ -40,17 +40,29 @@
         {     "id":5 ,
               "nivel":"nivel 5",
               "title":"Método largo" ,
-              "content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "
+              "content":"Al igual que el Hotel California, siempre se agrega algo a un método, pero nunca se quita nada. Dado que es más fácil escribir código que leerlo, este 'olor' pasa desapercibido hasta que el método se convierte en una fea bestia de gran tamaño. ",
+              "challenge":"identifica el siguiente reto",
+              "tip":" los métodos largos ofrecen el escondite perfecto para el código duplicado no deseado",
+              "icons":"/img/longmethod.png",
+              "viñeta":"¿Como podemos identificar este tipo de olor de codigo?"
        },
         {     "id":6 ,
               "nivel":"nivel 6",
               "title":"Clase de datos" ,
-              "content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "
+              "content":"Una clase de datos se refiere a una clase que contiene solo campos y métodos crudos para acceder a ellos (getters y setters). Estos son simplemente contenedores de datos utilizados por otras clases. Estas clases no contienen ninguna funcionalidad adicional y no pueden operar de forma independiente con los datos que poseen.",
+              "tip":"Mejora la comprensión y organización del código. Las operaciones en datos particulares ahora se recopilan en un solo lugar, en lugar de hacerlo al azar en todo el código.",
+              "icons":"/img/dataclass.png",
+              "challenge":"identifica el siguiente reto",
+              "viñeta":"¿Como podemos identificar este tipo de olor de codigo?"
        },
         {     "id":7 ,
               "nivel":"nivel 7",
               "title":"Flujo de lava" ,
-              "content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "
+              "content":"Cuando los requisitos para el software cambiaron o se hicieron correcciones, nadie tuvo tiempo de limpiar el código anterior. ",
+              "challenge":"identifica el siguiente reto",
+              "tip":"El tamaño de código se reducey el soporte se hace mas sencillo. ",
+              "icons":"/img/deadcode.png",
+              "viñeta":"¿Como podemos identificar este tipo de olor de codigo?"
        },
         {     "id":8 ,
               "nivel":"nivel 8",
@@ -60,12 +72,20 @@
         {     "id":9 ,
               "nivel":"nivel 9",
               "title":"Lista de parámetros larga" ,
-              "content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "
+              "content":"Las largas listas de parámetros también pueden ser el subproducto de los esfuerzos por hacer que las clases sean más independientes entre sí. Por ejemplo, el código para crear objetos específicos necesarios en un método se movió del método al código para llamar al método, pero los objetos creados se pasan al método como parámetros. Por lo tanto, la clase original ya no conoce las relaciones entre los objetos y la dependencia ha disminuido. Pero si se crean varios de estos objetos, cada uno de ellos requerirá su propio parámetro, lo que significa una lista de parámetros más larga.",
+              "tip":"La refactorización de estetipo de olor puede revelar código duplicado que antes no se había detectado.",
+              "icons":"/img/longparameterlist.png",
+              "challenge":"identifica el siguiente reto",
+              "viñeta":"¿Como podemos identificar este tipo de olor de codigo?"
        },
         {     "id":10 ,
               "nivel":"nivel 10",
               "title":"Legado rechazado" ,
-              "content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "
+              "content":"Si una subclase usa solo algunos de los métodos y propiedades heredados de sus padres, la jerarquía está fuera de lugar. Los métodos innecesarios pueden simplemente no usarse o redefinirse y generar excepciones. ",
+              "challenge":"identifica el siguiente reto",
+              "tip":"Mejora la claridad y organización del código. Ya no tendrá que preguntarse por qué la clase perro se hereda de la clase silla (aunque ambas tengan 4 patas). ",
+              "icons":"/img/legacy.png",
+              "viñeta":"¿Como podemos identificar este tipo de olor de codigo?"
        },
         {"id":11 ,"nivel":"nivel 11","title":"this is a example 1" ,"content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "},
         {"id":12 ,"nivel":"nivel 12","title":"this is a example 1" ,"content":"aqui ira el contenido de explicacion del tema a tratar en el titulo "},
