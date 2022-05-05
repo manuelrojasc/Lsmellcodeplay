@@ -244,6 +244,13 @@
   });
 
   let data = {};
+  let modalInit = document.getElementById('wrapperInit');
+  let btnInit = document.getElementById('btnInit');
+
+  btnInit.addEventListener('click',()=>{
+    modalInit.classList.add('inactive')
+  })
+
   async function loadData (){
     const res = await fetch('./data.json')
     console.log(res)
@@ -255,6 +262,7 @@
   function showModal (id){
     const info = data.find(ele => ele.id == id)
     const content = document.getElementById('myModalContent');
+    const contentchallenge = document.getElementById('myModalchallengeContent');
     content.innerHTML = `
       <h4 class="containerTitle">${info.title}</h4>
       <div class="containerInfo">
@@ -271,7 +279,7 @@
 
   function hideModal (){
     $('#modalInfo').css('display', 'none');
-    $('#wrapper').css('display', 'none');
+    $('#modalchallenge').css('display', 'flex');
   }
 
   
