@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LsmeelGame</title>
     <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Tangerine">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700' rel='stylesheet' type='text/css'><link rel="stylesheet" href="./style.css">
     <!-- Bootstrap CSS -->
@@ -19,10 +19,28 @@
     
 
 <div id="app">
-
-      <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#comment-modal">Comentarios</button>
-  
+<div>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#comment-modal">Comentarios</button>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#duplicatecode-modal">Codigo duplicado</button>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#largeclass-modal">Clase larga</button>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#featureenvy-modal">Caracteristica envidia</button>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#longmethod-modal">Metodo largo</button>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#dataclass-modal">Clase de datos</button>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#deadcode-modal">Flujo de lava</button>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#swissarmyknife-modal">Navaja del ejercito suizo</button>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#longparameters-modal">Lista de parametros larga</button>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#refusedbequest-modal">Legado rechazado</button>  
+  </div>
   <!-- Modal -->
   <div class="modal fade" id="comment-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -50,7 +68,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Tratamiento</h5>
                           <p class="card-text">Los comentarios generalmente se crean con las mejores intenciones, cuando el autor se da cuenta de que su código no es intuitivo ni obvio. En tales casos, los comentarios son como un desodorante que enmascara el olor del código sospechoso que podría mejorarse.</p>
-                          <!-- <p class="card-text">Las funciones podrian tener una breve descripcion y una lista de parametros de entrada y salida.</p> -->
+                          <p class="card-text">Las funciones podrian tener una breve descripcion y una lista de parametros de entrada y salida.</p>
                         </div>
                       </div>
                   </div>
@@ -131,7 +149,7 @@
 
   <!-- codigo duplicado -->
        <!-- Modal -->
-  <div class="modal fade" id="duplicate-challenge-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="duplicatecode-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -163,6 +181,30 @@
                   </div>
                 </div>
             </div>
+            <button type="button" class="btn btn-primary" @click="showCommentChallenge()" v-show="!commentChallengeShow">Ir al desafio</button>
+            <div class="container-fluid" v-show="commentChallengeShow">
+                <div class="row">
+                  <div class="col">
+                    <div class="card" >
+                        <div class="card-body">
+                            <div id="comment-txt">
+                                
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col">
+                    <div class="card" >
+                        <div class="card-body">
+                            <div id="comment-response-txt">
+                                
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-secondary" @click="reviewAnswer('comments')"  >Verificar</button>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -175,7 +217,7 @@
 
   <!-- Clase larga -->
       <!-- Modal -->
-  <div class="modal fade" id="commet-challenge-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="largeclass-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -207,6 +249,30 @@
                   </div>
                 </div>
             </div>
+            <button type="button" class="btn btn-primary" @click="showCommentChallenge()" v-show="!commentChallengeShow">Ir al desafio</button>
+            <div class="container-fluid" v-show="commentChallengeShow">
+                <div class="row">
+                  <div class="col">
+                    <div class="card" >
+                        <div class="card-body">
+                            <div id="comment-txt">
+                                
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col">
+                    <div class="card" >
+                        <div class="card-body">
+                            <div id="comment-response-txt">
+                                
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-secondary" @click="reviewAnswer('comments')"  >Verificar</button>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -219,7 +285,7 @@
 
   <!-- caracteristica envidia -->
     <!-- Modal -->
-    <div class="modal fade" id="commet-challenge-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="featureenvy-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
@@ -251,6 +317,30 @@
                       </div>
                     </div>
                 </div>
+                <button type="button" class="btn btn-primary" @click="showCommentChallenge()" v-show="!commentChallengeShow">Ir al desafio</button>
+                <div class="container-fluid" v-show="commentChallengeShow">
+                    <div class="row">
+                      <div class="col">
+                        <div class="card" >
+                            <div class="card-body">
+                                <div id="comment-txt">
+                                    
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col">
+                        <div class="card" >
+                            <div class="card-body">
+                                <div id="comment-response-txt">
+                                    
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-secondary" @click="reviewAnswer('comments')"  >Verificar</button>
+                </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -264,7 +354,7 @@
 
   <!-- metodo largo -->
     <!-- Modal -->
-    <div class="modal fade" id="commet-challenge-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="longmethod-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
@@ -296,6 +386,30 @@
                       </div>
                     </div>
                 </div>
+                <button type="button" class="btn btn-primary" @click="showCommentChallenge()" v-show="!commentChallengeShow">Ir al desafio</button>
+                <div class="container-fluid" v-show="commentChallengeShow">
+                    <div class="row">
+                      <div class="col">
+                        <div class="card" >
+                            <div class="card-body">
+                                <div id="comment-txt">
+                                    
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col">
+                        <div class="card" >
+                            <div class="card-body">
+                                <div id="comment-response-txt">
+                                    
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-secondary" @click="reviewAnswer('comments')"  >Verificar</button>
+                </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -309,7 +423,7 @@
 
   <!-- clase de datos -->
      <!-- Modal -->
-  <div class="modal fade" id="commet-challenge-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="dataclass-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -341,6 +455,30 @@
                   </div>
                 </div>
             </div>
+            <button type="button" class="btn btn-primary" @click="showCommentChallenge()" v-show="!commentChallengeShow">Ir al desafio</button>
+            <div class="container-fluid" v-show="commentChallengeShow">
+                <div class="row">
+                  <div class="col">
+                    <div class="card" >
+                        <div class="card-body">
+                            <div id="comment-txt">
+                                
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col">
+                    <div class="card" >
+                        <div class="card-body">
+                            <div id="comment-response-txt">
+                                
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-secondary" @click="reviewAnswer('comments')"  >Verificar</button>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -353,7 +491,7 @@
 
   <!-- flujo de lava -->
     <!-- Modal -->
-    <div class="modal fade" id="commet-challenge-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="deadcode-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
@@ -375,7 +513,7 @@
                       </div>
                       <div class="col">
                         <div class="card" >
-                            <img src="/img/comments-02.png" class="card-img-top" alt="...">
+                            <img src="/img/dead-code-02.png" class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-title">Tratamiento</h5>
                               <p class="card-text">Si un comentario explica una sección de código, esta sección se puede convertir en un método separado a través de Método de extracción . Lo más probable es que el nombre del nuevo método se pueda tomar del propio texto del comentario.</p>
@@ -384,6 +522,30 @@
                           </div>
                       </div>
                     </div>
+                </div>
+                <button type="button" class="btn btn-primary" @click="showCommentChallenge()" v-show="!commentChallengeShow">Ir al desafio</button>
+                <div class="container-fluid" v-show="commentChallengeShow">
+                    <div class="row">
+                      <div class="col">
+                        <div class="card" >
+                            <div class="card-body">
+                                <div id="comment-txt">
+                                    
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col">
+                        <div class="card" >
+                            <div class="card-body">
+                                <div id="comment-response-txt">
+                                    
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-secondary" @click="reviewAnswer('comments')"  >Verificar</button>
                 </div>
             </div>
             <div class="modal-footer">
@@ -397,7 +559,7 @@
 
    <!-- navaja del ejercito suizo -->
      <!-- Modal -->
-  <div class="modal fade" id="commet-challenge-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="swissarmyknife-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -429,6 +591,30 @@
                   </div>
                 </div>
             </div>
+            <button type="button" class="btn btn-primary" @click="showCommentChallenge()" v-show="!commentChallengeShow">Ir al desafio</button>
+            <div class="container-fluid" v-show="commentChallengeShow">
+                <div class="row">
+                  <div class="col">
+                    <div class="card" >
+                        <div class="card-body">
+                            <div id="comment-txt">
+                                
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col">
+                    <div class="card" >
+                        <div class="card-body">
+                            <div id="comment-response-txt">
+                                
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-secondary" @click="reviewAnswer('comments')"  >Verificar</button>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -441,7 +627,7 @@
 
    <!-- lista larga de parametros -->
      <!-- Modal -->
-  <div class="modal fade" id="commet-challenge-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="longparameters-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -473,6 +659,30 @@
                   </div>
                 </div>
             </div>
+            <button type="button" class="btn btn-primary" @click="showCommentChallenge()" v-show="!commentChallengeShow">Ir al desafio</button>
+            <div class="container-fluid" v-show="commentChallengeShow">
+                <div class="row">
+                  <div class="col">
+                    <div class="card" >
+                        <div class="card-body">
+                            <div id="comment-txt">
+                                
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col">
+                    <div class="card" >
+                        <div class="card-body">
+                            <div id="comment-response-txt">
+                                
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-secondary" @click="reviewAnswer('comments')"  >Verificar</button>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -485,7 +695,7 @@
 
     <!-- Legado rechazado -->
       <!-- Modal -->
-  <div class="modal fade" id="commet-challenge-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="refusedbequest-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -516,6 +726,30 @@
                       </div>
                   </div>
                 </div>
+            </div>
+            <button type="button" class="btn btn-primary" @click="showCommentChallenge()" v-show="!commentChallengeShow">Ir al desafio</button>
+            <div class="container-fluid" v-show="commentChallengeShow">
+                <div class="row">
+                  <div class="col">
+                    <div class="card" >
+                        <div class="card-body">
+                            <div id="comment-txt">
+                                
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col">
+                    <div class="card" >
+                        <div class="card-body">
+                            <div id="comment-response-txt">
+                                
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-secondary" @click="reviewAnswer('refusedbequest')"  >Verificar</button>
             </div>
         </div>
         <div class="modal-footer">
@@ -549,7 +783,7 @@
             let code = 'System.out.println("Hello World!");';  
             this.commentChallengeShow = true;
             this.commentEditor = CodeMirror(document.getElementById('comment-txt'),{
-			value: code,
+			      value: code,
             mode: "text/x-java",
             lineNumbers:true,
             theme: 'mbo',
