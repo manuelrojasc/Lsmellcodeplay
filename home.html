@@ -12,14 +12,44 @@
     <link rel="stylesheet" href="lib/codemirror-5.65.3/lib/codemirror.css">
     <script src="lib/codemirror-5.65.3/lib/codemirror.js"></script>
     <!-- <script src="lib/codemirror-5.65.3/mode/"></script> -->
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="lib/codemirror-5.65.3/theme/mbo.css">
     <script src="https://unpkg.com/vue@3"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js'></script>
+
 </head>
 <body>
     
 
 <div id="app">
 <div>
+
+  <img src="img/workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" @click="saluda()" href="#">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+</map>
+  <div class="honeycombs honeycombs-wrapper">
+    <div class="honeycombs-inner-wrapper">
+      {{levels.length}}
+      <div class="comb-container" v-for="level in levels">
+
+        <div class="comb  row2 " data-bs-toggle="modal" :data-bs-target="level.modal_id" >
+          <div >
+            <div>
+              <div >
+                <div >
+                  <span >Nivel {{level.id}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#comment-modal">Comentarios</button>
     <!-- Button trigger modal -->
@@ -106,46 +136,7 @@
       </div>
     </div>
   </div>
-
-<!--comment challenge modal-->
-<div class="modal fade" id="comments-challenge-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Comentarios</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class="container-fluid">
-                <div class="row">
-                  <div class="col">
-                    <div class="card" >
-                        <div class="card-body">
-                           
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                    <div class="card" >
-                        <img src="/img/comments-02.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Tratamiento</h5>
-                          <p class="card-text">Los comentarios generalmente se crean con las mejores intenciones, cuando el autor se da cuenta de que su código no es intuitivo ni obvio. En tales casos, los comentarios son como un desodorante que enmascara el olor del código sospechoso que podría mejorarse.</p>
-                          <!-- <p class="card-text">Las funciones podrian tener una breve descripcion y una lista de parametros de entrada y salida.</p> -->
-                        </div>
-                      </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#duplicate-challenge-modal">Ir al desafio</button>
-            <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-<!--fin comment challenge modal-->
+  <!-- Modal -->
 
   <!-- codigo duplicado -->
        <!-- Modal -->
@@ -187,7 +178,7 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div id="comment-txt">
+                            <div id="comment-txt1">
                                 
                             </div>
                         </div>
@@ -196,7 +187,7 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div id="comment-response-txt">
+                            <div id="comment-response-txt1">
                                 
                             </div>
                         </div>
@@ -255,7 +246,7 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div id="comment-txt">
+                            <div id="comment-txt2">
                                 
                             </div>
                         </div>
@@ -264,7 +255,7 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div id="comment-response-txt">
+                            <div id="comment-response-txt2">
                                 
                             </div>
                         </div>
@@ -323,7 +314,7 @@
                       <div class="col">
                         <div class="card" >
                             <div class="card-body">
-                                <div id="comment-txt">
+                                <div id="comment-txt3">
                                     
                                 </div>
                             </div>
@@ -332,7 +323,7 @@
                       <div class="col">
                         <div class="card" >
                             <div class="card-body">
-                                <div id="comment-response-txt">
+                                <div id="comment-response-txt3">
                                     
                                 </div>
                             </div>
@@ -392,7 +383,7 @@
                       <div class="col">
                         <div class="card" >
                             <div class="card-body">
-                                <div id="comment-txt">
+                                <div id="comment-tx4">
                                     
                                 </div>
                             </div>
@@ -401,7 +392,7 @@
                       <div class="col">
                         <div class="card" >
                             <div class="card-body">
-                                <div id="comment-response-txt">
+                                <div id="comment-response-txt4">
                                     
                                 </div>
                             </div>
@@ -461,7 +452,7 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div id="comment-txt">
+                            <div id="comment-txt5">
                                 
                             </div>
                         </div>
@@ -470,7 +461,7 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div id="comment-response-txt">
+                            <div id="comment-response-txt5">
                                 
                             </div>
                         </div>
@@ -529,7 +520,7 @@
                       <div class="col">
                         <div class="card" >
                             <div class="card-body">
-                                <div id="comment-txt">
+                                <div id="comment-txt6">
                                     
                                 </div>
                             </div>
@@ -538,7 +529,7 @@
                       <div class="col">
                         <div class="card" >
                             <div class="card-body">
-                                <div id="comment-response-txt">
+                                <div id="comment-response-txt6">
                                     
                                 </div>
                             </div>
@@ -597,7 +588,7 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div id="comment-txt">
+                            <div id="comment-txt7">
                                 
                             </div>
                         </div>
@@ -606,7 +597,7 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div id="comment-response-txt">
+                            <div id="comment-response-txt7">
                                 
                             </div>
                         </div>
@@ -665,7 +656,7 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div id="comment-txt">
+                            <div id="comment-txt8">
                                 
                             </div>
                         </div>
@@ -674,7 +665,7 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div id="comment-response-txt">
+                            <div id="comment-response-txt8">
                                 
                             </div>
                         </div>
@@ -733,7 +724,7 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div id="comment-txt">
+                            <div id="comment-txt9">
                                 
                             </div>
                         </div>
@@ -742,7 +733,7 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div id="comment-response-txt">
+                            <div id="comment-response-txt9">
                                 
                             </div>
                         </div>
@@ -764,6 +755,15 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script>
   const { createApp } = Vue
+  const levels =  [
+    {id:1, name:'Principiante', description:'Nivel de desarrollo inicial', modal_id:'#comment-modal'},
+    {id:2, name:'Principiante', description:'Nivel de desarrollo inicial', modal_id:'#comment-modal'},
+    {id:3, name:'Principiante', description:'Nivel de desarrollo inicial', modal_id:'#comment-modal'},
+    {id:4, name:'Principiante', description:'Nivel de desarrollo inicial', modal_id:'#comment-modal'},
+    {id:5, name:'Principiante', description:'Nivel de desarrollo inicial', modal_id:'#comment-modal'},
+    {id:6, name:'Principiante', description:'Nivel de desarrollo inicial', modal_id:'#comment-modal'},
+    {id:7, name:'Principiante', description:'Nivel de desarrollo inicial', modal_id:'#comment-modal'},
+  ]
 
   createApp({
     data() {
@@ -773,23 +773,33 @@
         commentChallengeShow: false,
         commentEditor:null,
         commentResponseEditor:null,
+        levels
       }
     },
     methods:{
         init(){
-             
+          $wrapper = $(document).find('.honeycombs-inner-wrapper');
+          console.log($wrapper)
         },
-        showCommentChallenge(){
-            let code = 'System.out.println("Hello World!");';  
+        saluda(){
+          alert('hola')
+        },
+        async showCommentChallenge(){
+            let txt=await fetch('./exercises.txt');
+            let txtCode=await txt.text();
+            // let code = "System.out.println(\"Hola mundo\");";  
             this.commentChallengeShow = true;
             this.commentEditor = CodeMirror(document.getElementById('comment-txt'),{
-			      value: code,
+			      value: txtCode,
             mode: "text/x-java",
             lineNumbers:true,
             theme: 'mbo',
 		 });
             this.commentResponseEditor = CodeMirror(document.getElementById('comment-response-txt'),{
-
+              value: '',
+            mode: "text/x-java",
+            lineNumbers:true,
+            theme: 'mbo',
             });  
         },
 
@@ -797,7 +807,7 @@
             
             switch (smmellName) {
                 case 'comments':
-                    answer_status=reviewCommentAnswer();
+                    answer_status=this.reviewCommentAnswer();
                     break;
             }
             if(answer_status=='ok'){
@@ -812,7 +822,12 @@
         reviewCommentAnswer(){
             let code = this.commentResponseEditor.getValue();
             //analizar el codigo escrito y encontrar 
-            
+            console.log(code);
+            if( code.indexOf("//")>0 ) alert("Error");
+            else{
+              this.user.points+=10;
+              alert("ganaste 10 pts.");
+            }
         }
     },
     mounted() {

@@ -1,0 +1,28 @@
+
+    class UsuarioControlador{
+
+        /**
+        * @desc metodo para crear usuario en la base de datos verificando correo valid y si usuario ya existe.
+        **/
+        public void guardarUsuario(String nombre, String apellidos, String email, String password, String telefono, String direccion){
+          
+          // verifica si el correo tiene arroba para comprobnar que es un correo valido
+          if(!email.contains("@")){
+            throw new RuntimeException("El correo no tiene arroba");
+          }
+          //conecta a la base de datos
+          BaseDatos bd = new BaseDatos();
+          bd.conectar();
+
+          //verifica si el usuario ya existe
+          usuarioAnterior=bd.ejecutar("select * from usuarios where email = '"+email+"'");
+          if(usuarioAnterior){
+            throw new Exception("El usuario ya existe");
+            //devuelve error en caso de que el usuario ya exista
+          }
+          //inserta el nuevo usuario en la Base de datos
+          usuario=bd.ejecutar("INSERT into usuarios ('"+nombres+"','"+apellidos+"')");
+          
+         }
+     
+    }

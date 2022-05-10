@@ -252,7 +252,7 @@
   })
 
   async function loadData (){
-    const res = await fetch('./data.json')
+    const res =  
     console.log(res)
     const flagData =  await res.json();
     data = flagData.content;
