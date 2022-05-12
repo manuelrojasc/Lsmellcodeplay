@@ -5,6 +5,7 @@
   --color-btn-default   :#00c853;
   --font-family         :'Roboto', serif;
   --padding-btn         : 12px 10px;
+  --font-seze-nav       : 1.3rem;
 
 }
 html {
@@ -373,6 +374,46 @@ body {
   padding: var(--padding-btn);
 }
 
+.navbar{
+  font-size: var(--font-seze-nav );
+}
+.containerHeart, .center{
+  display: flex;
+  align-items: center;
+}
+.containerHeart{
+  width: 70px;
+  justify-content: space-between;
+}
+.heart-item{
+  display: flex;
+  justify-content: center;
+}
+
+.lifePoints{
+  color: #1a237e;
+  font-weight: 600;
+}
+.nav-label{
+  color: #3f51b5;
+}
+.nick{
+  color: #311b92;
+}
+
+.heart{
+  animation: heart 1.5s infinite ease-in-out;
+  color: red;
+  font-size: 1rem;
+  text-shadow: 1px 1px 3px #4a148c;
+}
+.m-5{margin: 5px;}
+.mr-5{margin-right: 5px; }
+.mr-10{margin-right: 10px; }
+img{
+  width: 100%;
+}
+
 
 
 /*
@@ -394,4 +435,10 @@ body {
   50%{opacity: 0.5; color:var(--color-message-trans)}
   70%{opacity: 1;}
   100% {opacity: 0.5;}
+}
+
+@keyframes heart {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.2)}
+  100% {transform: scale(1)}
 }
