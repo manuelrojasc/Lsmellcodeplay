@@ -51,7 +51,7 @@
 </div>
   <div>
 
-  <img src="img/home.png" alt="Workplace" usemap="#image_map">
+  <!-- <img src="img/home.png" alt="Workplace" usemap="#image_map">
     <map name="image_map">
       <area shape="poly" data-bs-toggle="modal" data-bs-target="#comment-modal" coords="64,121,8,216,63,313,174,313,230,217,175,122" href="#"  title="" alt="" >
       <area shape="poly" data-bs-toggle="modal" :data-bs-target="user.points<20?'#blocked-modal':'#duplicatecode-modal'" coords="63,344,176,340,230,435,176,532,176,532,62,532,62,532,10,439" href="#" title="" alt="" >
@@ -72,7 +72,72 @@
       <area shape="poly" data-bs-toggle="modal" data-bs-target="#comment-modal" coords="1614,124,1724,124,1779,218,1723,312,1614,313,1560,216" href="#" title="" alt="" >
       <area shape="poly" data-bs-toggle="modal" data-bs-target="#comment-modal" coords="1616,343,1725,344,1774,436,1725,531,1614,530,1560,438" href="#" title="" alt="" >
     </map>
+  </div> -->
+
+  <div style="display: flex;">
+      <div>
+        <svg height="210" width="500" data-bs-toggle="modal" data-bs-target="#comment-modal" href="#"  title="" alt="">
+          <polygon points="286.60,150 200,200 113.39,150 113.40,50 200,0 286.60,50"  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"/>
+          <text x="200" y="100" text-anchor="middle" fill="red" font-size="30">Xasdasda</text>
+        </svg>
+      </div>
+      <div>
+        <svg height="210" width="500" data-bs-toggle="modal" :data-bs-target="user.points<20?'#blocked-modal':'#duplicatecode-modal'">
+          <polygon  points="286.60,150 200,200 113.39,150 113.40,50 200,0 286.60,50"   style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"/>
+          <text x="200" y="100" text-anchor="middle" fill="red" font-size="30">Xasdasda</text>
+        </svg>
+      </div>
+      <div>
+        <svg height="210" width="500" data-bs-toggle="modal" :data-bs-target="user.points<10?'#blocked-modal':'#largeclass-modal'">
+          <polygon  points="286.60,150 200,200 113.39,150 113.40,50 200,0 286.60,50"  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+          <text x="200" y="100" text-anchor="middle" fill="red" font-size="30">Xasdasda</text>
+        </svg>
+      </div>
+      <div>
+        <svg height="210" width="500" data-bs-toggle="modal" data-bs-target="#featureenvy-modal" >
+          <polygon points="286.60,150 200,200 113.39,150 113.40,50 200,0 286.60,50"  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+          <text x="200" y="100" text-anchor="middle" fill="red" font-size="30">Xasdasda</text>
+        </svg>
+      </div>
+      <div>
+        <svg height="210" width="500" data-bs-toggle="modal" data-bs-target="#longmethod-modal">
+          <polygon points="286.60,150 200,200 113.39,150 113.40,50 200,0 286.60,50"  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+          <text x="200" y="100" text-anchor="middle" fill="red" font-size="30">Xasdasda</text>
+        </svg>
+      </div>
+      <div>
+        <svg height="210" width="500" data-bs-toggle="modal" data-bs-target="#dataclass-modal">
+          <polygon points="286.60,150 200,200 113.39,150 113.40,50 200,0 286.60,50"  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+          <text x="200" y="100" text-anchor="middle" fill="red" font-size="30">Xasdasda</text>
+        </svg>
+      </div>
+      <div>
+        <svg height="210" width="500" data-bs-toggle="modal" data-bs-target="#largeclass-modal">
+          <polygon points="286.60,150 200,200 113.39,150 113.40,50 200,0 286.60,50"  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+          <text x="200" y="100" text-anchor="middle" fill="red" font-size="30">Xasdasda</text>
+        </svg>
+      </div>
+      <div>
+        <svg height="210" width="500" data-bs-toggle="modal" data-bs-target="#swissarmyknife-modal">
+          <polygon points="286.60,150 200,200 113.39,150 113.40,50 200,0 286.60,50"  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+          <text x="200" y="100" text-anchor="middle" fill="red" font-size="30">Xasdasda</text>
+        </svg>
+      </div>
+      <div>
+        <svg height="210" width="500" data-bs-toggle="modal" data-bs-target="#longparameters-modal">
+          <polygon points="286.60,150 200,200 113.39,150 113.40,50 200,0 286.60,50"  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+          <text x="200" y="100" text-anchor="middle" fill="red" font-size="30">Xasdasda</text>
+        </svg>
+      </div>
+      <div>
+        <svg height="210" width="500" data-bs-toggle="modal" data-bs-target="#refusedbequest-modal">
+          <polygon points="286.60,150 200,200 113.39,150 113.40,50 200,0 286.60,50"  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+          <text x="200" y="100" text-anchor="middle" fill="red" font-size="30">Xasdasda</text>
+        </svg>
+      </div>
+
   </div>
+
   <!-- Modal -->
   <div class="modal fade" id="comment-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
