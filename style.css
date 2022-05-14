@@ -467,6 +467,20 @@ img{
   background-position:-450px top; 
 }  */
 
+.svg{
+  height:210px; width:500px;
+}
+.svg:hover{
+  cursor: pointer;
+}
+polygon:hover {
+  fill: red;
+}
+
+
+
+
+
 @keyframes slidein {
   0% {right: 55px;}
   30%{ transform: rotate(30deg);}
@@ -499,6 +513,3 @@ img{
   100% {width: 0px;height: 0px;}
 }
 
-polygon:hover {
-  fill: red;
-}
