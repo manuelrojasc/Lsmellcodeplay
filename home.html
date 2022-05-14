@@ -31,7 +31,7 @@
 <div id="app">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <span class="nick mr-10" >Manuel</span>
+      <span class="cl-blue mr-10" >Manuel</span>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -131,7 +131,9 @@
                   </div>
               </div>
             </div>
-            <button type="button" class="btn btn-secondary" @click="reviewAnswer('comments')"  >Verificar</button>
+            <!-- <button type="button" class="btn btn-secondary" @click="reviewAnswer('comments')"  >Verificar</button> -->
+            <button type="button" class="btn btn-secondary" @click="reviewAnswer('comments')" data-bs-toggle="modal"  data-bs-target="#ups" >Verificar</button>
+            <button type="button" class="btn btn-secondary" @click="reviewAnswer('comments')" data-bs-toggle="modal"  data-bs-target="#good" >Verificar2</button>
         </div>
         </div>
         <div class="modal-footer">
@@ -688,14 +690,70 @@
   </div>
    <!-- fin lista larga de parametros-->
    <div class="modal fade" id="blocked-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
+    <div class="modal-dialog modal-xs">
+      <div class="modal-content modal-content-points" >
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Necesita mas puntos</h5>
+          <h5 class="modal-title title-modal-red" id="exampleModalLabel">Alto !! <i class="fa-solid fa-hand"></i> </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-         necesitas mas puntos para desbloquear este nivel
+        <div class="modal-body modal-body-points">
+          <div class="container-points">
+            <span class="title-points cl-blue">Necesitas mas puntos para desbloquear este nivel</span>
+            <div class="content-img imgPoints">
+              <img src="img/robot-points.png" alt="Falta de Puntos">
+            </div>
+            <div class="sombra"></div>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="ups" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xs">
+      <div class="modal-content modal-content-points" >
+        <div class="modal-header">
+          <h5 class="modal-title title-modal-red" id="exampleModalLabel">UPSS !! <i class="fa-solid fa-face-sad-cry"></i><i class="fa-solid fa-face-disappointed"></i> </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-body-points">
+          <div class="container-points">
+            <span class="title-points cl-blue">Todo el Mundo se Puede equivocar {{user.attemps}} </span>
+            <div class="content-img imgPoints">
+              <img src="img/robot-points.png" alt="Falta de Puntos">
+            </div>
+            <div class="sombra"></div>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="good" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xs">
+      <div class="modal-content modal-content-points" >
+        <div class="modal-header">
+          <h5 class="modal-title title-modal-blue" id="exampleModalLabel">BIEN !! <i class="fa-solid fa-face-smile-wink"></i><i class="fa-solid fa-face-smile"></i> </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-body-points">
+          <div class="container-points">
+            <span class="title-points cl-blue">Ohh eres un Experto en esto!! {{user.attemps}} </span>
+            <div class="content-img imgPoints">
+              <img src="img/robot-happy.png" alt="Falta de Puntos">
+            </div>
+            <div class="sombra"></div>
+
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
