@@ -7,6 +7,8 @@
   --padding-btn         : 12px 10px;
   --font-seze-nav       : 1.3rem;
 
+  --size-hexa           : 145px;
+  --background-hexa     : #2EB5E0;
 }
 html {
   font-family: 'Lato', sans-serif;
@@ -271,11 +273,12 @@ body {
 }
 
 .imgtransition {
-  position: absolute;
-  right: 55px;
-  bottom: 25px;
+  position: fixed;
+  right: 0px;
+  bottom: 50px;
   animation: slidein 3s infinite ease-in-out;
   font-family: var(--font-family);
+  width: 100px;
 }
 .box-small{
   width: 150px;
@@ -285,18 +288,23 @@ body {
   content: "Prueba tus habilidades !";
   position: absolute;
   transform: rotate(-45deg);
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: var(--color-message-robot);
   font-weight: 600;
   animation: text 4s infinite;
+  top: -0px;
+  left: -80px;
+
+  width: 200px;
+  display: block;
 }
 
 .imgtransition::after{
   content: "";
   position: absolute;
   display: block;
-  bottom:5px;
-  left: 90px;
+  bottom:-50px;
+  left: 10px;
   width: 80px;
   height: 50px;
   background: transparent;
@@ -456,31 +464,79 @@ body {
 .m-5{margin: 5px;}
 .mr-5{margin-right: 5px; }
 .mr-10{margin-right: 10px; }
-img{
-  width: 100%;
-}
-.modal-header{
-  border-bottom: none;
-}
+img{ width: 100%;}
+.modal-header{ border-bottom: none;}
 /*
 .imgtransition:hover { 
   background-position:-450px top; 
 }  */
-
-.svg{
-  height:210px; width:500px;
+.container-pol{
+  padding-left: 22px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(var(--size-hexa),var(--size-hexa)));
+  column-gap: 26px;
+  row-gap: 10px;
 }
-.svg:hover{
+.item-pol{
+  height: var(--size-hexa);
+}
+#hexagono2{
+  height: calc(var(--size-hexa)/1.76321);
+  position: relative;
+  width: var(--size-hexa);
+  background-color: var(--background-hexa);
+  transform: rotate(-30deg);
+  animation: hexa 4s infinite ease-in-out;
+  box-shadow: 1px 1px 3px #000;
+}
+
+#hexagono2:before {
+  background: inherit;
+  content: '';
+  height: 100%;
+  position: absolute;
+  transform: rotate(-60deg);
+  transform-origin: 50% 50%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left:0;
+  box-shadow: 1px 1px 3px #000;
+}
+#hexagono2:after {
+  background: inherit;
+  content: '';
+  height: 100%;
+  position: absolute;
+  transform: rotate(60deg);
+  transform-origin: 50% 50%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left:0;
+  box-shadow: 1px 1px 3px #000;
+}
+
+#hexagono2:hover{
   cursor: pointer;
+  background-color: #1b6d86;
 }
-polygon:hover {
-  fill: red;
+.text-pol{
+  font-family: serif;
+  color: #fff;
+  left: 33%;
+  position: absolute;
+  top: 25%;
+  transform: rotate(30deg);
+  z-index: 1;
+  animation: hexa-text 4s infinite ease-in-out;
 }
-
-
-
-
-
+body{
+  background: #C4DBE0;
+}
 @keyframes slidein {
   0% {right: 55px;}
   30%{ transform: rotate(30deg);}
@@ -502,10 +558,20 @@ polygon:hover {
   50% {transform: scale(1.2)}
   100% {transform: scale(1)}
 }
-  @keyframes slideinPoins {
+@keyframes slideinPoins {
   0% {top: 0px;transform: rotate(15deg)}
   50%{top: 40px;transform: rotate(0deg)}
   100% {top: 0px;transform: rotate(15deg)}
+}
+@keyframes hexa {
+  0% {transform: rotate(-30deg)}
+  50%{transform: rotate(90deg)}
+  100% {transform: rotate(-30deg)}
+}
+@keyframes hexa-text {
+  0% {transform: rotate(30deg)}
+  50%{transform: rotate(-90deg)}
+  100% {transform: rotate(30deg)}
 }
 @keyframes sombra {
   0% {width: 0px;height: 0px;}
