@@ -9,6 +9,7 @@
 
   --size-hexa           : 145px;
   --background-hexa     : #2EB5E0;
+  --hexa-inactive       : #bdbdbd;
 }
 html {
   font-family: 'Lato', sans-serif;
@@ -481,7 +482,7 @@ img{ width: 100%;}
 .item-pol{
   height: var(--size-hexa);
 }
-#hexagono2{
+.hexagono2{
   height: calc(var(--size-hexa)/1.76321);
   position: relative;
   width: var(--size-hexa);
@@ -491,7 +492,7 @@ img{ width: 100%;}
   box-shadow: 1px 1px 3px #000;
 }
 
-#hexagono2:before {
+.hexagono2:before {
   background: inherit;
   content: '';
   height: 100%;
@@ -505,7 +506,7 @@ img{ width: 100%;}
   left:0;
   box-shadow: 1px 1px 3px #000;
 }
-#hexagono2:after {
+.hexagono2:after {
   background: inherit;
   content: '';
   height: 100%;
@@ -519,8 +520,10 @@ img{ width: 100%;}
   left:0;
   box-shadow: 1px 1px 3px #000;
 }
-
-#hexagono2:hover{
+.hexa-inactive{
+  background-color: var(--hexa-inactive);
+}
+.hexagono2:hover{
   cursor: pointer;
   background-color: #1b6d86;
 }
@@ -535,7 +538,10 @@ img{ width: 100%;}
   animation: hexa-text 4s infinite ease-in-out;
 }
 body{
-  background: #C4DBE0;
+  background: #b3e5fc;
+}
+.navb{
+  background: #e1f5fe;
 }
 @keyframes slidein {
   0% {right: 55px;}

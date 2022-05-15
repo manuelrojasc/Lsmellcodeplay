@@ -1,28 +1,116 @@
+import java.util.ArrayList;
 
-    class UsuarioControlador{
+class Calidad{
 
-        /**
-        * @desc metodo para crear usuario en la base de datos verificando correo valid y si usuario ya existe.
-        **/
-        public void guardarUsuario(String nombre, String apellidos, String email, String password, String telefono, String direccion){
-          
-          // verifica si el correo tiene arroba para comprobnar que es un correo valido
-          if(!email.contains("@")){
-            throw new RuntimeException("El correo no tiene arroba");
-          }
-          //conecta a la base de datos
-          BaseDatos bd = new BaseDatos();
-          bd.conectar();
+  public void ActualizarCalidad(ArrayList productos){
+  	for (var i = 0; i < productos.Count; i++){
+  		if (productos[i].nombre != "Queso" && productos[i].nombre != "Pollo"){
+  			if (productos[i].calidad > 0){
+  				if (productos[i].nombre != "Queso Parmesano"){
+  					  productos[i].calidad= productos[i].calidad - 1;
+  				}
+  			}
+  		}else{
+  			if (productos[i].calidad < 50){
+  				  productos[i].calidad = productos[i].calidad + 1;
+  				if (productos[i].Nombre == "pollo"){
+  					if (productos[i].preciodeventa < 11){
+  						if (productos[i].calidad < 50){
+  							productos[i].calidad = productos[i].calidad + 1;
+  						}
+  					}
+  
+  					if (productos[i].preciodeventa < 6){
+  						if (productos[i].calidad < 50){
+  							productos[i].calidad = productos[i].calidad + 1;
+  						}
+  					}
+  				}
+  			}
+  		}
+  
+  		if (productos[i].nombre != "Queso Parmesano"){
+  			productos[i].preciodeventa = productos[i].preciodeventa - 1;
+  		}
+  
+  		if (productos[i].preciodeventa < 0){
+  			if (productos[i].nombre != "Queso"){
+  				if (productos[i].Name != "pollo"){
+  					if (productos[i].calidad > 0){
+  						if (productos[i].Name != "Queso Parmesano"){
+  							productos[i].calidad = productos[i].calidad - 1;
+  						}
+  					}
+  				}else{
+  					productos[i].calidad = productos[i].calidad - productos[i].calidad;
+  				}
+  			}else{
+  				if (productos[i].calidad < 50){
+  					productos[i].calidad = productos[i].calidad + 1;
+  				}
+  			}
+  		}
+  	}
+  } 
+}
 
-          //verifica si el usuario ya existe
-          usuarioAnterior=bd.ejecutar("select * from usuarios where email = '"+email+"'");
-          if(usuarioAnterior){
-            throw new Exception("El usuario ya existe");
-            //devuelve error en caso de que el usuario ya exista
-          }
-          //inserta el nuevo usuario en la Base de datos
-          usuario=bd.ejecutar("INSERT into usuarios ('"+nombres+"','"+apellidos+"')");
-          
-         }
-     
+/* 
+  public void ActualizarCalidad(productos){
+  	for (var i = 0; i < productos.Count; i++){
+  		if (productos[i].nombre != "Queso" && productos[i].nombre != "Pollo"){
+  			DisminuirCalidad(i);
+  		}else{
+  			ActualizarCalidadDeAcuerdoAlPrecio(i);
+  		}
+  
+  		if (productos[i].nombre != "Queso Parmesano"){
+  			productos[i].preciodeventa = productos[i].preciodeventa - 1;
+  		}
+  
+  		if (productos[i].preciodeventa < 0){
+  			ActualizarCalidadDeProductosExpirados(i);
+  		}
+  	}
+}
+
+private void DisminuirCalidad(int i){
+  if(productos[i].calidad >0){
+    if(productos[i].nombbre!="Queso Parmesano"){
+       productos[i].calidad=productos[i].calidad -1
     }
+  }
+}
+
+private void AumentarCalidad(int i){
+  if(productos[i].calidad<50){
+      productos[i].calidad =productos[i].calidad +1
+  }
+}
+
+private void ActualizarCalidadDeAcuerdoAlPrecio(int i){
+  AumentarCalidad(i);
+  if(productos[i].nommbre=="pollo"){
+    if(productos[i].preciodeventa<11){
+      AumentarCalidad(i);
+    }
+    if(productos[i].preciodeventa<6){
+      AumentarCalidad(i);
+    }
+  }
+}
+
+private void ActualizarCalidadDeProductosExpirados(int i){
+  if(productos[i].nombre!="Queso"){
+    if(productos[i].nombre!="Pollo"){
+      DisminuirCalidad(i);
+    }else{
+      productos[i].calidad=productos[i].calidad -productos[i].calidad
+    }
+  }else{
+    AumentarCalidad(i);
+  }
+}
+
+
+
+*/

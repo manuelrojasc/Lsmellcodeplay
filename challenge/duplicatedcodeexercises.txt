@@ -1,28 +1,45 @@
+class operations {
 
-    class UsuarioControlador{
+  public boolean calculateSomeBooleanValue(){
+    return true;
+  }
+  
+  public boolean isSomething(){
+      if (!this.calculateSomeBooleanValue()){
+          return true;
+      }else{
+          return false;
+      }
+  }
+  public boolean isSomething_(){
+    return !this.calculateSomeBooleanValue();
+  }
 
-        /**
-        * @desc metodo para crear usuario en la base de datos verificando correo valid y si usuario ya existe.
-        **/
-        public void guardarUsuario(String nombre, String apellidos, String email, String password, String telefono, String direccion){
-          
-          // verifica si el correo tiene arroba para comprobnar que es un correo valido
-          if(!email.contains("@")){
-            throw new RuntimeException("El correo no tiene arroba");
-          }
-          //conecta a la base de datos
-          BaseDatos bd = new BaseDatos();
-          bd.conectar();
+  public int sum(int num,int num2){
+    return num+num2;
+  }
 
-          //verifica si el usuario ya existe
-          usuarioAnterior=bd.ejecutar("select * from usuarios where email = '"+email+"'");
-          if(usuarioAnterior){
-            throw new Exception("El usuario ya existe");
-            //devuelve error en caso de que el usuario ya exista
-          }
-          //inserta el nuevo usuario en la Base de datos
-          usuario=bd.ejecutar("INSERT into usuarios ('"+nombres+"','"+apellidos+"')");
-          
-         }
-     
+  public int subtraction(int num,int num2){
+    return num-num2;
+  }
+  public int multiplication(int num,int num2){
+    return num*num2;
+  }
+
+  public int operations(int num,int num2,String operations){
+    switch(operations){
+      case 1:  operations = "Suma";
+                  return num+num2;
+                  break;
+      case 2:  operations = "Resta";
+                  return num-num2;
+                  break;
+      case 3:  operations = "Multiplicacion";
+                  return num*num2;
+                  break;
+      default :  return 0;
+                   break;
     }
+  }
+  
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LsmeelGame</title>
+    <title>LsmellGame</title>
     <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Tangerine">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700' rel='stylesheet' type='text/css'><link rel="stylesheet" href="./style.css">
     <!-- Bootstrap CSS -->
@@ -29,7 +29,7 @@
   </div>
 
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light navb">
       <div class="container-fluid">
         <span class="cl-blue mr-10" >Manuel</span>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,37 +49,37 @@
         </div>
       </div>
     </nav>
-
+  <h1 class="title">SmellCodePlay</h1>
   <div class="container-pol">
       <div class="item-pol">
-        <div id="hexagono2"  data-bs-toggle="modal" data-bs-target="#comment-modal"><span  class="text-pol">Puticienta</span></div>
+        <div class="hexagono2"  data-bs-toggle="modal" data-bs-target="#comment-modal"><span  class="text-pol">Puticienta</span></div>
       </div>
       <div class="item-pol">
-        <div id="hexagono2"  data-bs-toggle="modal" :data-bs-target="user.points<20?'#blocked-modal':'#duplicatecode-modal'"><span  class="text-pol">Puticienta</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" :data-bs-target="user.points<20?'#blocked-modal':'#duplicatecode-modal'"><span  class="text-pol">Puticienta</span></div>
       </div>
       <div class="item-pol">
-        <div id="hexagono2"  data-bs-toggle="modal" :data-bs-target="user.points<10?'#blocked-modal':'#largeclass-modal'"><span  class="text-pol">Puticienta</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" :data-bs-target="user.points<10?'#blocked-modal':'#largeclass-modal'"><span  class="text-pol">Puticienta</span></div>
       </div>
       <div class="item-pol">
-        <div id="hexagono2"  data-bs-toggle="modal" data-bs-target="#featureenvy-modal"><span  class="text-pol">Puticienta</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#featureenvy-modal"><span  class="text-pol">Puticienta</span></div>
       </div>
       <div class="item-pol">
-        <div id="hexagono2"  data-bs-toggle="modal" data-bs-target="#longmethod-modal"><span  class="text-pol">Puticienta</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#longmethod-modal"><span  class="text-pol">Puticienta</span></div>
       </div>
       <div class="item-pol">
-        <div id="hexagono2"  data-bs-toggle="modal" data-bs-target="#dataclass-modal"><span  class="text-pol">Puticienta</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#dataclass-modal"><span  class="text-pol">Puticienta</span></div>
       </div>
       <div class="item-pol">
-        <div id="hexagono2"  data-bs-toggle="modal" data-bs-target="#largeclass-modal"><span  class="text-pol">Puticienta</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#largeclass-modal"><span  class="text-pol">Puticienta</span></div>
       </div>
       <div class="item-pol">
-        <div id="hexagono2"  data-bs-toggle="modal" data-bs-target="#swissarmyknife-modal"><span  class="text-pol">Puticienta</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#swissarmyknife-modal"><span  class="text-pol">Puticienta</span></div>
       </div>
       <div class="item-pol">
-        <div id="hexagono2"  data-bs-toggle="modal" data-bs-target="#longparameters-modal"><span  class="text-pol">Puticienta</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#longparameters-modal"><span  class="text-pol">Puticienta</span></div>
       </div>
       <div class="item-pol">
-        <div id="hexagono2"  data-bs-toggle="modal" data-bs-target="#refusedbequest-modal"><span  class="text-pol">Puticienta</span></div>
+        <div class="hexagono2 inactive"  data-bs-toggle="modal" data-bs-target="#refusedbequest-modal"><span  class="text-pol">Puticienta</span></div>
       </div>
   </div>
   <!-- Modal -->
@@ -694,7 +694,7 @@
       </div>
     </div>
   </div>
-   <!-- fin lista larga de parametros-->
+   <!-- fin lista larga de blocked modal-->
    <div class="modal fade" id="blocked-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xs">
       <div class="modal-content modal-content-points" >
@@ -836,7 +836,7 @@
 
   </div>
 
-
+</div>
 <script>
   const { createApp } = Vue
  
@@ -1083,8 +1083,10 @@
             let code = this.commentsConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
-            if( code.indexOf("//")>0 ) alert("Error");
-            else{
+            this.commentsConfig.showChallenge=false;
+            if( code.indexOf("//")>0 ){
+
+            }else{
               this.user.points+=10;
               alert("ganaste 10 pts.");
             }
@@ -1094,10 +1096,12 @@
             let code = this.longmethodConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
-            if( code.indexOf("if")>0 ) alert("Error");
-            else{
+            this.longmethodConfig.showChallenge=false;
+            if( code.indexOf("if")>0 ){
+                //show modal
+            }else{
               this.user.points+=10;
-              alert("ganaste 10 pts.");
+             //show modal
             }
         },
 
@@ -1105,6 +1109,7 @@
             let code = this.dataclassConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.dataclassConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
@@ -1116,6 +1121,7 @@
             let code = this.deadcodeConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.deadcodeConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
@@ -1127,6 +1133,7 @@
             let code = this.duplicatedcodeConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.duplicatedcodeConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
@@ -1138,6 +1145,7 @@
             let code = this.featureenvyConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.featureenvyConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
@@ -1149,6 +1157,7 @@
             let code = this.largeclassConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.largeclassConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
@@ -1160,6 +1169,7 @@
             let code = this.refusedbequestConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.refusedbequestConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
@@ -1171,6 +1181,7 @@
             let code = this.longparametersConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.longparametersConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
@@ -1182,6 +1193,7 @@
             let code = this.swissarmyknifeConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.swissarmyknifeConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
