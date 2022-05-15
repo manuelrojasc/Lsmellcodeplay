@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LsmeelGame</title>
+    <title>LsmellGame</title>
     <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Tangerine">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700' rel='stylesheet' type='text/css'><link rel="stylesheet" href="./style.css">
     <!-- Bootstrap CSS -->
@@ -46,33 +46,6 @@
       </div>
     </div>
   </nav>
-<div>
-
-</div>
-  <div>
-
-  <!-- <img src="img/home.png" alt="Workplace" usemap="#image_map">
-    <map name="image_map">
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#comment-modal" coords="64,121,8,216,63,313,174,313,230,217,175,122" href="#"  title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" :data-bs-target="user.points<20?'#blocked-modal':'#duplicatecode-modal'" coords="63,344,176,340,230,435,176,532,176,532,62,532,62,532,10,439" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" :data-bs-target="user.points<10?'#blocked-modal':'#largeclass-modal'" coords="202,107,257,12,366,12,421,106,367,201,256,201" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#featureenvy-modal" coords="202,328,257,233,367,231,421,328,369,420,257,423" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#longmethod-modal" coords="453,342,562,342,611,435,564,534,451,532,398,437" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#dataclass-modal" coords="452,125,559,125,613,216,562,310,451,311,398,220" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#swissarmyknife-modal" coords="647,13,756,11,809,105,756,202,645,203,593,108" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#refusedbequest-modal" coords="644,233,750,234,805,326,757,422,645,423,591,329" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#longparameters-modal" coords="841,124,949,126,1000,216,951,313,842,312,785,218" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#largeclass-modal" coords="1032,16,1143,13,1193,105,1143,202,1033,201,979,109" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#comment-modal" coords="838,343,948,343,1003,434,950,532,839,532,785,437" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#comment-modal" coords="1034,234,1143,233,1194,329,1145,421,1036,420,982,328" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#comment-modal" coords="1230,122,1338,121,1389,217,1337,311,1226,311,1173,217" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#comment-modal" coords="1227,343,1335,343,1388,436,1337,533,1226,530,1173,438" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#comment-modal" coords="1421,234,1529,232,1585,327,1531,422,1421,423,1367,327" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#comment-modal" coords="1420,11,1531,13,1584,107,1530,199,1419,202,1366,110,1366,110" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#comment-modal" coords="1614,124,1724,124,1779,218,1723,312,1614,313,1560,216" href="#" title="" alt="" >
-      <area shape="poly" data-bs-toggle="modal" data-bs-target="#comment-modal" coords="1616,343,1725,344,1774,436,1725,531,1614,530,1560,438" href="#" title="" alt="" >
-    </map>
-  </div> -->
 
   <div style="display: flex;">
       <div>
@@ -126,7 +99,7 @@
       <div>
         <svg height="210" width="500" data-bs-toggle="modal" data-bs-target="#longparameters-modal">
           <polygon points="286.60,150 200,200 113.39,150 113.40,50 200,0 286.60,50"  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
-          <text x="200" y="100" text-anchor="middle" fill="red" font-size="30">Xasdasda</text>
+          <text x="200" y="00" text-anchor="middle" fill="red" font-size="30">Xasdasda</text>
         </svg>
       </div>
       <div>
@@ -750,7 +723,7 @@
       </div>
     </div>
   </div>
-   <!-- fin lista larga de parametros-->
+   <!-- fin lista larga de blocked modal-->
    <div class="modal fade" id="blocked-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xs">
       <div class="modal-content modal-content-points" >
@@ -892,7 +865,7 @@
 
   </div>
 
-
+</div>
 <script>
   const { createApp } = Vue
  
@@ -1139,8 +1112,10 @@
             let code = this.commentsConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
-            if( code.indexOf("//")>0 ) alert("Error");
-            else{
+            this.commentsConfig.showChallenge=false;
+            if( code.indexOf("//")>0 ){
+
+            }else{
               this.user.points+=10;
               alert("ganaste 10 pts.");
             }
@@ -1150,10 +1125,12 @@
             let code = this.longmethodConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
-            if( code.indexOf("if")>0 ) alert("Error");
-            else{
+            this.longmethodConfig.showChallenge=false;
+            if( code.indexOf("if")>0 ){
+                //show modal
+            }else{
               this.user.points+=10;
-              alert("ganaste 10 pts.");
+             //show modal
             }
         },
 
@@ -1161,6 +1138,7 @@
             let code = this.dataclassConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.dataclassConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
@@ -1172,6 +1150,7 @@
             let code = this.deadcodeConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.deadcodeConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
@@ -1183,6 +1162,7 @@
             let code = this.duplicatedcodeConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.duplicatedcodeConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
@@ -1194,6 +1174,7 @@
             let code = this.featureenvyConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.featureenvyConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
@@ -1205,6 +1186,7 @@
             let code = this.largeclassConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.largeclassConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
@@ -1216,6 +1198,7 @@
             let code = this.refusedbequestConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.refusedbequestConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
@@ -1227,6 +1210,7 @@
             let code = this.longparametersConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.longparametersConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
@@ -1238,6 +1222,7 @@
             let code = this.swissarmyknifeConfig.responseEditor.getValue();
             //analizar el codigo escrito y encontrar 
             console.log(code);
+            this.swissarmyknifeConfig.showChallenge=false;
             if( code.indexOf("if")>0 ) alert("Error");
             else{
               this.user.points+=10;
