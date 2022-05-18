@@ -1,28 +1,52 @@
 
-    class UsuarioControlador{
+      class persona{
+        public String nombre;
+        public String apellido;
+        public String fechaNacimiento;
+        public String sexo;
 
-        /**
-        * @desc metodo para crear usuario en la base de datos verificando correo valid y si usuario ya existe.
-        **/
-        public void guardarUsuario(String nombre, String apellidos, String email, String password, String telefono, String direccion){
-          
-          // verifica si el correo tiene arroba para comprobnar que es un correo valido
-          if(!email.contains("@")){
-            throw new RuntimeException("El correo no tiene arroba");
-          }
-          //conecta a la base de datos
-          BaseDatos bd = new BaseDatos();
-          bd.conectar();
+        public void setNombre(String nombre){
+            this.nombre = nombre;
+        }
+        public String getNombre(){
+            return nombre;
+        }
+        public void setApellido(String apellido){
+            this.apellido = apellido;
+        }
+        public String getApellido(){
+            return apellido;
+        }
+        public void setFechaNacimiento(String fechaNacimiento){
+            this.fechaNacimiento = fechaNacimiento;
+        }
+        public String getFechaNacimiento(){
+            return fechaNacimiento;
+        }
+      }
 
-          //verifica si el usuario ya existe
-          usuarioAnterior=bd.ejecutar("select * from usuarios where email = '"+email+"'");
-          if(usuarioAnterior){
-            throw new Exception("El usuario ya existe");
-            //devuelve error en caso de que el usuario ya exista
-          }
-          //inserta el nuevo usuario en la Base de datos
-          usuario=bd.ejecutar("INSERT into usuarios ('"+nombres+"','"+apellidos+"')");
-          
-         }
-     
-    }
+      class Venta{
+
+        public void vender(String nombre, String apellido, String fechaNacimiento,Producto producto){
+            persona cliente = new persona();
+            cliente.nombre= nombre;
+            cliente.apellido=apellido;
+            cliente.nacimiento=fechaNacimiento;
+            
+            public int edad;
+
+            fechaActual=new Date();
+            edad= Math.ceil(fecha_actual - cliente.fechaNacimiento)
+            if( edad < 18 )
+              throw Exception("No se puede vender nuestros productos a menores de edad")
+            else { 
+              comprobante= new Comprobante()
+              comprobante.setCliente(cliente)
+              comprobante.setProducto(producto)
+              comprobante.guardar()
+            }
+        }
+
+
+
+      }

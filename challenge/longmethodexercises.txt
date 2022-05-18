@@ -1,116 +1,62 @@
-import java.util.ArrayList;
-
-class Calidad{
-
-  public void ActualizarCalidad(ArrayList productos){
-  	for (var i = 0; i < productos.Count; i++){
-  		if (productos[i].nombre != "Queso" && productos[i].nombre != "Pollo"){
-  			if (productos[i].calidad > 0){
-  				if (productos[i].nombre != "Queso Parmesano"){
-  					  productos[i].calidad= productos[i].calidad - 1;
-  				}
-  			}
-  		}else{
-  			if (productos[i].calidad < 50){
-  				  productos[i].calidad = productos[i].calidad + 1;
-  				if (productos[i].Nombre == "pollo"){
-  					if (productos[i].preciodeventa < 11){
-  						if (productos[i].calidad < 50){
-  							productos[i].calidad = productos[i].calidad + 1;
-  						}
-  					}
-  
-  					if (productos[i].preciodeventa < 6){
-  						if (productos[i].calidad < 50){
-  							productos[i].calidad = productos[i].calidad + 1;
-  						}
-  					}
-  				}
-  			}
-  		}
-  
-  		if (productos[i].nombre != "Queso Parmesano"){
-  			productos[i].preciodeventa = productos[i].preciodeventa - 1;
-  		}
-  
-  		if (productos[i].preciodeventa < 0){
-  			if (productos[i].nombre != "Queso"){
-  				if (productos[i].Name != "pollo"){
-  					if (productos[i].calidad > 0){
-  						if (productos[i].Name != "Queso Parmesano"){
-  							productos[i].calidad = productos[i].calidad - 1;
-  						}
-  					}
-  				}else{
-  					productos[i].calidad = productos[i].calidad - productos[i].calidad;
-  				}
-  			}else{
-  				if (productos[i].calidad < 50){
-  					productos[i].calidad = productos[i].calidad + 1;
-  				}
-  			}
-  		}
-  	}
-  } 
-}
-
-/* 
-  public void ActualizarCalidad(productos){
-  	for (var i = 0; i < productos.Count; i++){
-  		if (productos[i].nombre != "Queso" && productos[i].nombre != "Pollo"){
-  			DisminuirCalidad(i);
-  		}else{
-  			ActualizarCalidadDeAcuerdoAlPrecio(i);
-  		}
-  
-  		if (productos[i].nombre != "Queso Parmesano"){
-  			productos[i].preciodeventa = productos[i].preciodeventa - 1;
-  		}
-  
-  		if (productos[i].preciodeventa < 0){
-  			ActualizarCalidadDeProductosExpirados(i);
-  		}
-  	}
-}
-
-private void DisminuirCalidad(int i){
-  if(productos[i].calidad >0){
-    if(productos[i].nombbre!="Queso Parmesano"){
-       productos[i].calidad=productos[i].calidad -1
-    }
-  }
-}
-
-private void AumentarCalidad(int i){
-  if(productos[i].calidad<50){
-      productos[i].calidad =productos[i].calidad +1
-  }
-}
-
-private void ActualizarCalidadDeAcuerdoAlPrecio(int i){
-  AumentarCalidad(i);
-  if(productos[i].nommbre=="pollo"){
-    if(productos[i].preciodeventa<11){
-      AumentarCalidad(i);
-    }
-    if(productos[i].preciodeventa<6){
-      AumentarCalidad(i);
-    }
-  }
-}
-
-private void ActualizarCalidadDeProductosExpirados(int i){
-  if(productos[i].nombre!="Queso"){
-    if(productos[i].nombre!="Pollo"){
-      DisminuirCalidad(i);
-    }else{
-      productos[i].calidad=productos[i].calidad -productos[i].calidad
-    }
-  }else{
-    AumentarCalidad(i);
-  }
-}
-
-
-
-*/
+	$scope.cambiarTipoDePago = function(){	
+		let parentid = $scope.payModes.filter(el => el.id == $scope.pay.paymodeid).map(el => el.parentid);
+		$scope.pay.viewbank=false;
+		if(parentid[0]>0){
+			if(parentid[0]==4 || parentid[0]==10 || parentid[0]==11 ){
+				$scope.pay.typeBankUniqueCode = "N° Tarjeta";
+				$scope.pay.namecode = "Tarjeta";
+				$scope.cashpaymode=false;
+			}else if(parentid[0]==9){
+				$scope.pay.viewbank=true;
+				$scope.pay.typeBankUniqueCode = "N° Operacion";
+				$scope.pay.namecode = "Banco";
+				$scope.cashpaymode=false;
+			}else if(parentid[0]==2){
+				$scope.pay.typeBankUniqueCode = "N° Cheque";
+				$scope.pay.namecode = "Banco";
+				$scope.cashpaymode=false;
+				$scope.pay.viewbank=true;
+			}else if(parentid[0]==12){
+				$scope.noteCredit=0;
+				$scope.noteCreditExchange();
+				$scope.pay.typeBankUniqueCode = "N° Nota";
+				$scope.pay.namecode = "Nota";
+				$("#exchangeModal").modal('show');
+				$scope.cashpaymode=false;
+			}else if(parentid[0]==3){
+				$scope.cashpaymode=true;
+				$scope.pay.option=0;
+			}else{
+				$scope.pay.option=0;
+			}
+		}else{
+			if($scope.pay.paymodeid==4 || $scope.pay.paymodeid==10 || $scope.pay.paymodeid==11 ){
+				$scope.pay.typeBankUniqueCode = "N° Tarjeta";
+				$scope.pay.namecode = "Tarjeta";
+				$scope.cashpaymode=false;
+			}else if($scope.pay.paymodeid==9){
+				$scope.pay.viewbank=true;
+				$scope.pay.typeBankUniqueCode = "N° Operacion";
+				$scope.pay.namecode = "Banco";
+				$scope.cashpaymode=false;
+			}else if($scope.pay.paymodeid==2){
+				$scope.pay.typeBankUniqueCode = "N° Cheque";
+				$scope.pay.namecode = "Banco";
+				$scope.cashpaymode=false;
+				$scope.pay.viewbank=true;
+			}else if($scope.pay.paymodeid==12){
+				$scope.noteCredit=0;
+				$scope.noteCreditExchange();
+				$scope.pay.typeBankUniqueCode = "N° Nota";
+				$scope.pay.namecode = "Nota";
+				$("#exchangeModal").modal('show');
+				$scope.cashpaymode=false;
+			}else if($scope.pay.paymodeid==3){
+				$scope.cashpaymode=true;
+				$scope.pay.option=0;
+			}else{
+				$scope.pay.option=0;
+			}
+		}
+		
+	}

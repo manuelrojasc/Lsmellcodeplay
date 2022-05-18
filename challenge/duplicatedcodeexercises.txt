@@ -1,45 +1,31 @@
-class operations {
 
-  public boolean calculateSomeBooleanValue(){
-    return true;
-  }
-  
-  public boolean isSomething(){
-      if (!this.calculateSomeBooleanValue()){
-          return true;
-      }else{
-          return false;
-      }
-  }
-  public boolean isSomething_(){
-    return !this.calculateSomeBooleanValue();
-  }
+    class userioOperaciones{
 
-  public int sum(int num,int num2){
-    return num+num2;
-  }
+        public void crearUsuario(String nombre, String apellido, String email, String contraseña){
+            Usuario usuario = new Usuario();
+            usuario.setNombre(nombre);
+            usuario.setApellido(apellido);
+            usuario.setEmail(email);
+            usuario.setPassword(contraseña);
+            usuario.setEstado(true);
+          BD.guardarUsuario(usuario);
+        }
 
-  public int subtraction(int num,int num2){
-    return num-num2;
-  }
-  public int multiplication(int num,int num2){
-    return num*num2;
-  }
+        public void editarUsuario(idUsuario,String nombre, String apellido, String email, String contraseña){
 
-  public int operations(int num,int num2,String operations){
-    switch(operations){
-      case 1:  operations = "Suma";
-                  return num+num2;
-                  break;
-      case 2:  operations = "Resta";
-                  return num-num2;
-                  break;
-      case 3:  operations = "Multiplicacion";
-                  return num*num2;
-                  break;
-      default :  return 0;
-                   break;
+            Usuario usuario = new Usuario();
+            usuario=BD.obtenerUsuario(idUsuario);
+            usuario.setNombre(nombre);
+            usuario.setApellido(apellido);
+            usuario.setEmail(email);
+            usuario.setPassword(contraseña);
+            BD.actualizarUsuario(usuario);
+        }
+
+        public void eliminarUsuario(idUsuario){
+            Usuario usuario = new Usuario();
+            usuario=BD.obtenerUsuario(idUsuario);
+            usuario.setEstado(false);
+            BD.actualizarUsuario(usuario);
+        }
     }
-  }
-  
-}

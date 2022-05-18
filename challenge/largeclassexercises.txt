@@ -1,28 +1,127 @@
+		app.controller('trackerController',function($scope, $timeout, trackerService, userService){
+			$scope.usuario={};
+			$scope.usurios=[];
+			$scope.membresias={};
+			$scope.listaDeMembresias=[];
+			
+			$scope.listarMembresias=function(user){
+				let info="";
+				if(user.member_until){
+					let days=$scope.subtractDatesandReturnInDays(user.member_until);
+					let d_=user.member_until.substring(0,10);
+					info= `Membresia ${days>=0?'Hasta':'<b>Vencido</b>'}: ${d_} (${days}) dias.`;
+				}else{
+					info="NO TIENE MEMBRESIA";
+				}
+				return info;
+			}
 
-    class UsuarioControlador{
+			$scope.actualizarEstadoUsuario=function(index, estado){
+				$scope.users[index].online=state;
+			}
+			
+			$scope.listarUsuarios=async function(){
+				try {
+					data=await trackerService.users({status:1});
+					//days remaining
+					data.list.map((user)=>{
+						user.remainingDays=user.member_until?$scope.subtractDatesandReturnInDays(user.member_until):'';
+					})
+					$scope.usuarios=data.list;
+				} catch (error) {
+					$scope.showFail("failed in get users!");
+				}
+				
+			}
 
-        /**
-        * @desc metodo para crear usuario en la base de datos verificando correo valid y si usuario ya existe.
-        **/
-        public void guardarUsuario(String nombre, String apellidos, String email, String password, String telefono, String direccion){
-          
-          // verifica si el correo tiene arroba para comprobnar que es un correo valido
-          if(!email.contains("@")){
-            throw new RuntimeException("El correo no tiene arroba");
-          }
-          //conecta a la base de datos
-          BaseDatos bd = new BaseDatos();
-          bd.conectar();
+			$scope.seleccionarUsuarios=function(usuario){
+				$scope.usuario=usuario;
+				$scope.listarMembresias();
+			}
 
-          //verifica si el usuario ya existe
-          usuarioAnterior=bd.ejecutar("select * from usuarios where email = '"+email+"'");
-          if(usuarioAnterior){
-            throw new Exception("El usuario ya existe");
-            //devuelve error en caso de que el usuario ya exista
-          }
-          //inserta el nuevo usuario en la Base de datos
-          usuario=bd.ejecutar("INSERT into usuarios ('"+nombres+"','"+apellidos+"')");
-          
-         }
-     
-    }
+			$scope.nuevoUsuario=function(){
+				$scope.usuario={};
+			}
+			
+
+			
+		$scope.autenticarUsuario=function(usuario){
+				$scope.filtros.usuarios={};
+				
+				if( !$scope.usurio.autenticado) {
+					$scope.usuario=usuario;
+					trackerService.auth({user:$scope.usuario.nombre, pass:$scope.usuario.contraseña}).success(function(data){
+						usuario.autenticado=true;	
+						$scope.usurios_infilter=[$scope.usuario];
+					}).error(function(response){
+						usuario.password=null;
+						$scope.usuario={};
+						$scope.showFail("Failed!");
+					});
+				}else{
+					$scope.usuarios[index].contraseña=null;
+				}
+				
+			}
+			
+			
+			$scope.guardarUsuario=async ($event)=>{
+				var $btn = $($event.currentTarget).button('loading');
+				try {
+					await userService.save($scope.usuario);
+					$scope.usuario={};
+					$scope.listarUsuarios();
+				} catch (error) {
+					console.debug(error);
+					$scope.showFail("Failed!");
+				}
+				$btn.button('reset');
+			}
+			$scope.eliminarUsuario=async ()=>{
+				if (confirm("Confirme!")) {
+					await userService.delete($scope.usuario);
+					$scope.listarUsuarios();
+				} 
+			}
+			$scope.guardarMembresia=async ($event)=>{
+				var $btn = $($event.currentTarget).button('loading');
+				try {
+					$scope.membresia.userid=$scope.usuario.id;
+					await userService.saveMembership($scope.membresia);
+					$scope.listarMembresias();
+					$scope.membresia={};
+					$scope.showSuccess("Procesado!");
+				} catch (error) {
+					$scope.showFail("Failed!");
+				}
+				$btn.button('reset');
+				
+			}
+
+			$scope.listarUsuariosconMembresia=async()=>{
+				try {
+					$scope.listaDeMembresias = await userService.getUserMembership({userid:$scope.usuario.id});
+					$scope.$apply();
+				} catch (error) {
+					$scope.showFail("Failed!"+error);	
+				}
+			}
+
+			$scope.editarMembresia=function(item){
+				item.init=item.startdate;
+				item.end=item.enddate;
+				$scope.membresia=item;
+			}
+
+			$scope.eliminarMembresia=async(membresiaid)=>{
+				try {
+					await userService.deleteUserMembership({membershipid:membresiaid});
+					$scope.listarMembresias();		
+					$scope.showSuccess("Se elimino la men¿mbresia correctamente!");
+				} catch (error) {
+					$scope.showFail("Failed!"+error);
+				}
+			}
+
+			
+		});
