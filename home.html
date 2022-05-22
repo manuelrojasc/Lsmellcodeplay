@@ -17,10 +17,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/mode/clike/clike.min.js"></script>
 
-    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="lib/codemirror-5.65.3/theme/mbo.css">
     <script src="https://unpkg.com/vue@3"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js'></script>
+    <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
@@ -88,24 +88,20 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Comentarios</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button tyzpe="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <div class="container-fluid" v-show="!commentsConfig.showChallenge">
-                <div class="row">
-                  <div class="col">
-                    <div class="card" >
-                        <img src="img/comments.png" class="card-img-top" alt="...">
+                <div class="card-container">
+                    <div class="card card2" >
+                        <div class="card-img"><img src="img/comments.png" class="card-img-top" alt="..."></div>
                         <div class="card-body">
                           <h5 class="card-title">Descripcion</h5>
                           <p class="card-text">Los comentarios generalmente se crean con las mejores intenciones, cuando el autor se da cuenta de que su código no es intuitivo ni obvio. En tales casos, los comentarios son como un desodorante que enmascara el olor del código sospechoso que podría mejorarse.</p>
-                            
                         </div>
                       </div>
-                  </div>
-                  <div class="col">
-                    <div class="card" >
-                        <img src="img/comments-02.png" class="card-img-top" alt="...">
+                    <div class="card card2" >
+                        <div class="card-img"><img src="img/comments-02.png" class="card-img-top" alt="..."></div>
                         <div class="card-body">
                           <h5 class="card-title">Tratamiento</h5>
                           <p class="card-text">Los comentarios generalmente se crean con las mejores intenciones, cuando el autor se da cuenta de que su código no es intuitivo ni obvio. En tales casos, los comentarios son como un desodorante que enmascara el olor del código sospechoso que podría mejorarse.</p>
@@ -113,9 +109,8 @@
                         </div>
                       </div>
                   </div>
-                </div>
+                  <button type="button" class="btn btn-primary" @click="showCommentChallenge()" v-show="!commentsConfig.showChallenge">Ir al desafio</button>
             </div>
-        <button type="button" class="btn btn-primary" @click="showCommentChallenge()" v-show="!commentsConfig.showChallenge">Ir al desafio</button>
         <div class="container-fluid" v-show="commentsConfig.showChallenge">
             <div class="row">
               <div class="col">
