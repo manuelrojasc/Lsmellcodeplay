@@ -2,7 +2,7 @@
 const app =Vue.createApp({
    data() {
       return {
-        user:{name:'',points:0,attemps:3,answers:[]},
+        user:{name:'',points:0,attemps:3,answers:[],initModal:true},
         commentsConfig:{showChallenge:false,editor:null,responseEditor:null},
         duplicatedConfig:{showChallenge:false,editor:null,responseEditor:null},
         deadcodeConfig:{showChallenge:false,editor:null,responseEditor:null},
@@ -366,6 +366,11 @@ const app =Vue.createApp({
               this.user.points+=10;
               goodModal.show();
             }
+        },
+        reviewModalAnswer(){
+          this.user.initModal = false;
+          // let modalInit = document.getElementById('wrapperInit');
+          // modalInit.classList.add('inactive');
         },
 
     },

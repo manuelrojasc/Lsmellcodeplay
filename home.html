@@ -23,14 +23,33 @@
     
   </head>
   <body>
-  <div class="imgtransition">
-    <img src="./img/scode.png" style="max-height: 200px;">
-  </div>
+    
+    <div id="app">
+    <div class="wrapperInit" :class="user.initModal? '':'inactive' " id="wrapperInit">
+      <div class="imgtransition box-small"> <img src="./img/scode.png" style="max-height: 200px;"></div>
+      <div class="wrapperInitContainer">
+          <div class="wrapper-info">
+              <h1 class="titleInit">SmellCodePlay</h1>
+              <div class="info-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit culpa necessitatibus eum! Fugit harum possimus reprehenderit odio saepe voluptas. Dignissimos, id modi. Corrupti cum dolor labore doloremque, consequatur unde itaque?
+              </div>
+          </div>
+          <div class="wrapper-user">
+            <div style="display:flex;text-align:center;padding-top: 150px;">
+              <input v-model="user.name" placeholder="ingrese alias" />
+              <button @click="reviewModalAnswer()"  class="btnInit">Comenzar</button>
+            </div> 
+  
+          </div>
+      </div>
+    </div>
+    <div class="imgtransition">
+      <img src="./img/scode.png" style="max-height: 200px;">
+    </div>
 
-  <div id="app">
     <nav class="navbar navbar-expand-lg navbar-light navb">
       <div class="container-fluid">
-        <span class="cl-blue mr-10" >Manuel</span>
+        <span class="cl-blue mr-10" >{{user.name}}</span>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -54,10 +73,10 @@
         <div class="hexagono2"  data-bs-toggle="modal" data-bs-target="#comment-modal"><span  class="text-pol">Nivel 1</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" :data-bs-target="user.points<20?'#blocked-modal':'#duplicatecode-modal'"><span  class="text-pol">Nivel 2</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" :data-bs-target="user.points>20?'#blocked-modal':'#duplicatecode-modal'"><span  class="text-pol">Nivel 2</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" :data-bs-target="user.points<10?'#blocked-modal':'#largeclass-modal'"><span  class="text-pol">Nivel 3</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" :data-bs-target="user.points>10?'#blocked-modal':'#largeclass-modal'"><span  class="text-pol">Nivel 3</span></div>
       </div>
       <div class="item-pol">
         <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#featureenvy-modal"><span  class="text-pol">Nivel 4</span></div>
@@ -98,7 +117,7 @@
                           <h5 class="card-title">Descripción</h5>
                           <p class="card-text">Los comentarios generalmente se crean con las mejores intenciones, cuando el autor se da cuenta de que su código no es intuitivo ni obvio. En tales casos, los comentarios son como un desodorante que enmascara el olor del código sospechoso que podría mejorarse.</p>
                         </div>
-                      </div>
+                    </div>
                     <div class="card card2" >
                         <div class="card-img"><img src="img/comments-02.png" class="card-img-top" alt="..."></div>
                         <div class="card-body">
@@ -106,9 +125,9 @@
                           <p class="card-text">Los comentarios generalmente se crean con las mejores intenciones, cuando el autor se da cuenta de que su código no es intuitivo ni obvio. En tales casos, los comentarios son como un desodorante que enmascara el olor del código sospechoso que podría mejorarse.</p>
                           <p class="card-text">Las funciones podrian tener una breve descripcion y una lista de parametros de entrada y salida.</p>
                         </div>
-                      </div>
-                  </div>
-                  <button type="button" class="btn btn-primary" @click="showCommentChallenge()" v-show="!commentsConfig.showChallenge">Ir al desafio</button>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" @click="showCommentChallenge()" v-show="!commentsConfig.showChallenge">Ir al desafio</button>
             </div>
         <div class="container-fluid" v-show="commentsConfig.showChallenge">
             <div class="row">
@@ -146,7 +165,7 @@
   <!-- Modal -->
 
   <!-- codigo duplicado -->
-       <!-- Modal -->
+    <!-- Modal -->
   <div class="modal fade" id="duplicatecode-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
@@ -156,31 +175,27 @@
         </div>
         <div class="modal-body">
             <div class="container-fluid" v-show="!duplicatedConfig.showChallenge">
-                <div class="row">
-                  <div class="col">
-                    <div class="card" >
-                        <img src="/img/duplicatedcode.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Descripcion</h5>
-                          <p class="card-text">También hay una duplicación más sutil, cuando partes específicas del código se ven diferentes pero en realidad realizan el mismo trabajo. Este tipo de duplicación puede ser difícil de encontrar y corregir. A veces, la duplicación tiene un propósito. Cuando se apresuran a cumplir los plazos y el código existente es 'casi adecuado' para el trabajo, es posible que los programadores novatos no puedan resistir la tentación de copiar y pegar el código correspondiente. Y en algunos casos, el programador simplemente es demasiado perezoso para ordenar.</p>
-                            
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                    <div class="card" >
-                        <img src="/img/duplicate-code-02.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Tratamiento</h5>
-                          <p class="card-text">la duplicación de código suele suceder cuando hay más involucrados en el proyecto, sin que se den cuenta crear un método igual que hizo la otra persona.</p>
-                          <p class="card-text">para saldar esto se puede simplificar + brevedad = código que es más fácil de simplificar y más barato de mantener.</p>
-                          <p class="card-text">en casos muy raros la combinación de código idéntico pude hacer que el código sea menos intuitivo y obvio.</p>
-                        </div>
-                      </div>
+              <div class="card-container">
+                <div class="card card2" >
+                  <div class="card-img"><img src="img/duplicatedcode.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p class="card-text">También hay una duplicación más sutil, cuando partes específicas del código se ven diferentes pero en realidad realizan el mismo trabajo. Este tipo de duplicación puede ser difícil de encontrar y corregir. A veces, la duplicación tiene un propósito. Cuando se apresuran a cumplir los plazos y el código existente es 'casi adecuado' para el trabajo, es posible que los programadores novatos no puedan resistir la tentación de copiar y pegar el código correspondiente. Y en algunos casos, el programador simplemente es demasiado perezoso para ordenar.</p>
                   </div>
                 </div>
+                <div class="card card2" >
+                  <div class="card-img"><img src="img/duplicate-code-02.png" class="card-img-top" alt="..."></div>
+                  <div class="card-body">
+                    <h5 class="card-title">Tratamiento</h5>
+                    <p class="card-text">la duplicación de código suele suceder cuando hay más involucrados en el proyecto, sin que se den cuenta crear un método igual que hizo la otra persona.</p>
+                    <p class="card-text">para saldar esto se puede simplificar + brevedad = código que es más fácil de simplificar y más barato de mantener.</p>
+                    <p class="card-text">en casos muy raros la combinación de código idéntico pude hacer que el código sea menos intuitivo y obvio.</p>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-primary" @click="showDuplicatedCodeChallenge()" v-show="!duplicatedConfig.showChallenge">Ir al desafio</button>
             </div>
-            <button type="button" class="btn btn-primary" @click="showDuplicatedCodeChallenge()" v-show="!duplicatedConfig.showChallenge">Ir al desafio</button>
+
             <div class="container-fluid" v-show="duplicatedConfig.showChallenge">
                 <div class="row">
                   <div class="col">
@@ -225,31 +240,26 @@
         </div>
         <div class="modal-body">
             <div class="container-fluid" v-show="!largeclassConfig.showChallenge">
-                <div class="row">
-                  <div class="col">
-                    <div class="card" >
-                        <img src="/img/largeclass.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Descripcion</h5>
-                          <p class="card-text">Las clases generalmente comienzan pequeñas. Pero con el tiempo, se hinchan a medida que crece el programa.Como también es el caso con los métodos largos, a los programadores generalmente les resulta menos exigente mentalmente colocar una nueva característica en una clase existente que crear una nueva clase para la característica.</p>
-                            
-                        </div>
-                      </div>
+              <div class="card-container">
+                <div class="card card2" >
+                    <div class="card-img"><img src="img/largeclass.png" class="card-img-top" alt="..."></div>
+                    <div class="card-body">
+                      <h5 class="card-title">Descripción</h5>
+                      <p class="card-text">Las clases generalmente comienzan pequeñas. Pero con el tiempo, se hinchan a medida que crece el programa.Como también es el caso con los métodos largos, a los programadores generalmente les resulta menos exigente mentalmente colocar una nueva característica en una clase existente que crear una nueva clase para la característica.</p>
+                    </div>
                   </div>
-                  <div class="col">
-                    <div class="card" >
-                        <img src="/img/large-class-02.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Tratamiento</h5>
-                          <p class="card-text">Cuando una clase usa demasiados sombreros (funcionales), piense en dividirla:</p>
-                          <p class="card-text">Extraer clase: ayuda si parte del comportamiento de la clase grande se puede dividir en un componente separado.</p>
-                          <p class="card-text">Extraer subclase ayuda si parte del comportamiento de la clase grande se puede implementar de diferentes maneras o se usa en casos excepcionales.</p>
-                        </div>
-                      </div>
+                <div class="card card2" >
+                    <div class="card-img"><img src="img/large-class-02.png" class="card-img-top" alt="..."></div>
+                    <div class="card-body">
+                      <h5 class="card-title">Tratamiento</h5>
+                      <p class="card-text">Cuando una clase usa demasiados sombreros (funcionales), piense en dividirla:</p>
+                      <p class="card-text">Extraer clase: ayuda si parte del comportamiento de la clase grande se puede dividir en un componente separado.</p>
+                      <p class="card-text">Extraer subclase ayuda si parte del comportamiento de la clase grande se puede implementar de diferentes maneras o se usa en casos excepcionales.</p>
+                    </div>
                   </div>
-                </div>
+              </div>
+              <button type="button" class="btn btn-primary" @click="showLargeClassChallenge()" v-show="!largeclassConfig.showChallenge">Ir al desafio</button>
             </div>
-            <button type="button" class="btn btn-primary" @click="showLargeClassChallenge()" v-show="!largeclassConfig.showChallenge">Ir al desafio</button>
             <div class="container-fluid" v-show="largeclassConfig.showChallenge">
                 <div class="row">
                   <div class="col">
@@ -294,30 +304,25 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid" v-show="!featureenvyConfig.showChallenge">
-                    <div class="row">
-                      <div class="col">
-                        <div class="card" >
-                            <img src="/img/featureenvy.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Descripcion</h5>
-                              <p class="card-text">Un método accede a los datos de otro objeto más que a sus propios datos.Este olor puede ocurrir después de que los campos se muevan a una clase de datos. Si este es el caso, es posible que también desee mover las operaciones sobre los datos a esta clase.</p>
-                                
-                            </div>
-                          </div>
-                      </div>
-                      <div class="col">
-                        <div class="card" >
-                            <img src="/img/feature-envy-03.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Tratamiento</h5>
-                              <p class="card-text">Se deberian mover los metodos a la clase que mas los usa.</p>
-                              <p class="card-text">Si un método usa funciones de varias otras clases, primero determine qué clase contiene la mayoría de los datos usados. Luego coloque el método en esta clase junto con los otros datos. De manera alternativa, use Extraer método para dividir el método en varias partes que se pueden colocar en diferentes lugares en diferentes clases.</p>
-                            </div>
-                          </div>
-                      </div>
+                  <div class="card-container">
+                    <div class="card card2" >
+                        <div class="card-img"><img src="img/featureenvy.png" class="card-img-top" alt="..."></div>
+                        <div class="card-body">
+                          <h5 class="card-title">Descripción</h5>
+                          <p class="card-text">Un método accede a los datos de otro objeto más que a sus propios datos.Este olor puede ocurrir después de que los campos se muevan a una clase de datos. Si este es el caso, es posible que también desee mover las operaciones sobre los datos a esta clase.</p>
+                        </div>
                     </div>
+                    <div class="card card2" >
+                        <div class="card-img"><img src="img/feature-envy-03.png" class="card-img-top" alt="..."></div>
+                        <div class="card-body">
+                          <h5 class="card-title">Tratamiento</h5>
+                          <p class="card-text">Se deberian mover los metodos a la clase que mas los usa.</p>
+                          <p class="card-text">Si un método usa funciones de varias otras clases, primero determine qué clase contiene la mayoría de los datos usados. Luego coloque el método en esta clase junto con los otros datos. De manera alternativa, use Extraer método para dividir el método en varias partes que se pueden colocar en diferentes lugares en diferentes clases.</p>
+                        </div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-primary" @click="showFeatureEnvyChallenge()" v-show="!featureenvyConfig.showChallenge">Ir al desafio</button>
                 </div>
-                <button type="button" class="btn btn-primary" @click="showFeatureEnvyChallenge()" v-show="!featureenvyConfig.showChallenge">Ir al desafio</button>
                 <div class="container-fluid" v-show="featureenvyConfig.showChallenge">
                     <div class="row">
                       <div class="col">
@@ -363,29 +368,24 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid" v-show="!longmethodConfig.showChallenge">
-                    <div class="row">
-                      <div class="col">
-                        <div class="card" >
-                            <img src="/img/longmethod.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Descripcion</h5>
-                              <p class="card-text">Al igual que el Hotel California, siempre se agrega algo a un método, pero nunca se quita nada. Dado que es más fácil escribir código que leerlo, este 'olor' pasa desapercibido hasta que el método se convierte en una fea bestia de gran tamaño.</p>
-                                
-                            </div>
-                          </div>
-                      </div>
-                      <div class="col">
-                        <div class="card" >
-                            <img src="/img/long-method-03.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Tratamiento</h5>
-                              <p class="card-text">Como regla general, si siente la necesidad de comentar algo dentro de un método, debe tomar este código y ponerlo en un nuevo método. Incluso una sola línea puede y debe dividirse en un método separado, si requiere explicaciones. Y si el método tiene un nombre descriptivo, nadie necesitará mirar el código para ver qué hace.</p>
-                            </div>
-                          </div>
-                      </div>
+                  <div class="card-container">
+                    <div class="card card2" >
+                        <div class="card-img"><img src="img/longmethod.png" class="card-img-top" alt="..."></div>
+                        <div class="card-body">
+                          <h5 class="card-title">Descripción</h5>
+                          <p class="card-text">Al igual que el Hotel California, siempre se agrega algo a un método, pero nunca se quita nada. Dado que es más fácil escribir código que leerlo, este 'olor' pasa desapercibido hasta que el método se convierte en una fea bestia de gran tamaño.</p>
+                        </div>
                     </div>
+                    <div class="card card2" >
+                        <div class="card-img"><img src="img/long-method-03.png" class="card-img-top" alt="..."></div>
+                        <div class="card-body">
+                          <h5 class="card-title">Tratamiento</h5>
+                          <p class="card-text">Como regla general, si siente la necesidad de comentar algo dentro de un método, debe tomar este código y ponerlo en un nuevo método. Incluso una sola línea puede y debe dividirse en un método separado, si requiere explicaciones. Y si el método tiene un nombre descriptivo, nadie necesitará mirar el código para ver qué hace.</p>
+                        </div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-primary" @click="showLongMethodChallenge()" v-show="!longmethodConfig.showChallenge">Ir al desafio</button>
                 </div>
-                <button type="button" class="btn btn-primary" @click="showLongMethodChallenge()" v-show="!longmethodConfig.showChallenge">Ir al desafio</button>
                 <div class="container-fluid" v-show="longmethodConfig.showChallenge">
                     <div class="row">
                       <div class="col">
@@ -431,30 +431,25 @@
         </div>
         <div class="modal-body">
             <div class="container-fluid" v-show="!dataclassConfig.showChallenge">
-                <div class="row">
-                  <div class="col">
-                    <div class="card" >
-                        <img src="/img/dataclass.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Descripcion</h5>
-                          <p class="card-text">Una clase de datos se refiere a una clase que contiene solo campos y métodos crudos para acceder a ellos (getters y setters). Estos son simplemente contenedores de datos utilizados por otras clases. Estas clases no contienen ninguna funcionalidad adicional y no pueden operar de forma independiente con los datos que poseen.</p>
-                            
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                    <div class="card" >
-                        <img src="/img/data-class-02.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Tratamiento</h5>
-                          <p class="card-text">Una vez que la clase se ha llenado con métodos bien pensados, es posible que desee deshacerse de los métodos antiguos para acceder a los datos que brindan un acceso demasiado amplio a los datos de la clase. Para esto, Quitar método de configuración y Ocultar método pueden ser útiles.</p>
-                          <p class="card-text">Esto mejora la compresión y organización del código y también ayuda a detectar la duplicación del código.</p>
-                        </div>
-                      </div>
-                  </div>
+              <div class="card-container">
+                <div class="card card2" >
+                    <div class="card-img"><img src="img/dataclass.png" class="card-img-top" alt="..."></div>
+                    <div class="card-body">
+                      <h5 class="card-title">Descripción</h5>
+                      <p class="card-text">Una clase de datos se refiere a una clase que contiene solo campos y métodos crudos para acceder a ellos (getters y setters). Estos son simplemente contenedores de datos utilizados por otras clases. Estas clases no contienen ninguna funcionalidad adicional y no pueden operar de forma independiente con los datos que poseen.</p>
+                    </div>
                 </div>
+                <div class="card card2" >
+                    <div class="card-img"><img src="img/data-class-02.png" class="card-img-top" alt="..."></div>
+                    <div class="card-body">
+                      <h5 class="card-title">Tratamiento</h5>
+                      <p class="card-text">Una vez que la clase se ha llenado con métodos bien pensados, es posible que desee deshacerse de los métodos antiguos para acceder a los datos que brindan un acceso demasiado amplio a los datos de la clase. Para esto, Quitar método de configuración y Ocultar método pueden ser útiles.</p>
+                      <p class="card-text">Esto mejora la compresión y organización del código y también ayuda a detectar la duplicación del código.</p>
+                    </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-primary" @click="showDataClassChallenge()" v-show="!dataclassConfig.showChallenge">Ir al desafio</button>
             </div>
-            <button type="button" class="btn btn-primary" @click="showDataClassChallenge()" v-show="!dataclassConfig.showChallenge">Ir al desafio</button>
             <div class="container-fluid" v-show="dataclassConfig.showChallenge">
                 <div class="row">
                   <div class="col">
@@ -499,31 +494,26 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid" v-show="!deadcodeConfig.showChallenge">
-                    <div class="row">
-                      <div class="col">
-                        <div class="card" >
-                            <img src="/img/deadcode.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Descripcion</h5>
-                              <p class="card-text">Cuando los requisitos para el software cambiaron o se hicieron correcciones, nadie tuvo tiempo de limpiar el código anterior.</p>
-                                
-                            </div>
-                          </div>
-                      </div>
-                      <div class="col">
-                        <div class="card" >
-                            <img src="/img/dead-code-02.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Tratamiento</h5>
-                              <p class="card-text">El código muerto suele estar presente cuando se cambia los requisitos del software, ya que muchas veces nadie tuvo tiempo de limpiar el código anterior.</p>
-                              <p class="card-text">La forma más rápida de encontrar estos códigos muertos es usando un buen IDE.</p>
-                              <p class="card-text">Limpiando ese código que ya no se utiliza se hace más optimizado un código reducido y un soporte más sencillo.</p>
-                            </div>
-                          </div>
-                      </div>
+                  <div class="card-container">
+                    <div class="card card2" >
+                        <div class="card-img"><img src="img/deadcode.png" class="card-img-top" alt="..."></div>
+                        <div class="card-body">
+                          <h5 class="card-title">Descripción</h5>
+                          <p class="card-text">Cuando los requisitos para el software cambiaron o se hicieron correcciones, nadie tuvo tiempo de limpiar el código anterior.</p>
+                        </div>
                     </div>
+                    <div class="card card2" >
+                        <div class="card-img"><img src="img/dead-code-02.png" class="card-img-top" alt="..."></div>
+                        <div class="card-body">
+                          <h5 class="card-title">Tratamiento</h5>
+                          <p class="card-text">El código muerto suele estar presente cuando se cambia los requisitos del software, ya que muchas veces nadie tuvo tiempo de limpiar el código anterior.</p>
+                          <p class="card-text">La forma más rápida de encontrar estos códigos muertos es usando un buen IDE.</p>
+                          <p class="card-text">Limpiando ese código que ya no se utiliza se hace más optimizado un código reducido y un soporte más sencillo.</p>
+                        </div>
+                    </div>
+                  </div>  
+                  <button type="button" class="btn btn-primary" @click="showDeadCodeChallenge()" v-show="!deadcodeConfig.showChallenge">Ir al desafio</button>
                 </div>
-                <button type="button" class="btn btn-primary" @click="showDeadCodeChallenge()" v-show="!deadcodeConfig.showChallenge">Ir al desafio</button>
                 <div class="container-fluid" v-show="deadcodeConfig.showChallenge">
                     <div class="row">
                       <div class="col">
@@ -568,30 +558,25 @@
         </div>
         <div class="modal-body">
             <div class="container-fluid" v-show="!swissarmyknifeConfig.showChallenge">
-                <div class="row">
-                  <div class="col">
-                    <div class="card" >
-                        <img src="/img/swissarmyknife.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Descripcion</h5>
-                          <p class="card-text">Son fragmentos de código que menudo se le delegan tareas te todo tipo.</p>
-                            
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                    <div class="card" >
-                        <img src="/img/comments-02.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Tratamiento</h5>
-                          <p class="card-text">Los comentarios sirven para poder entender qué hace una sección de código si es para mejorar o dejarlo ahí.</p>
-                          <p class="card-text">Ya que a veces al querer modificar dicha sección de código se puede causar errores en otras secciones del código.</p>
-                        </div>
-                      </div>
-                  </div>
+              <div class="card-container">
+                <div class="card card2" >
+                    <div class="card-img"><img src="img/swissarmyknife.png" class="card-img-top" alt="..."></div>
+                    <div class="card-body">
+                      <h5 class="card-title">Descripción</h5>
+                      <p class="card-text">Son fragmentos de código que menudo se le delegan tareas te todo tipo.</p>
+                    </div>
                 </div>
-            </div>
+                <div class="card card2" >
+                    <div class="card-img"><img src="img/comments-02.png" class="card-img-top" alt="..."></div>
+                    <div class="card-body">
+                      <h5 class="card-title">Tratamiento</h5>
+                      <p class="card-text">Los comentarios sirven para poder entender qué hace una sección de código si es para mejorar o dejarlo ahí.</p>
+                          <p class="card-text">Ya que a veces al querer modificar dicha sección de código se puede causar errores en otras secciones del código.</p>
+                    </div>
+                </div>
+            </div>  
             <button type="button" class="btn btn-primary" @click="showSwissArmyknifeChallenge()" v-show="!swissarmyknifeConfig.showChallenge">Ir al desafio</button>
+            </div>
             <div class="container-fluid" v-show="swissarmyknifeConfig.showChallenge">
                 <div class="row">
                   <div class="col">
@@ -636,30 +621,25 @@
         </div>
         <div class="modal-body">
             <div class="container-fluid" v-show="!longparametersConfig.showChallenge">
-                <div class="row">
-                  <div class="col">
-                    <div class="card" >
-                        <img src="/img/longparameterlist.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Descripcion</h5>
-                          <p class="card-text">Las largas listas de parámetros también pueden ser el subproducto de los esfuerzos por hacer que las clases sean más independientes entre sí. Por ejemplo, el código para crear objetos específicos necesarios en un método se movió del método al código para llamar al método, pero los objetos creados se pasan al método como parámetros. Por lo tanto, la clase original ya no conoce las relaciones entre los objetos y la dependencia ha disminuido. Pero si se crean varios de estos objetos, cada uno de ellos requerirá su propio parámetro, lo que significa una lista de parámetros más larga.</p>
-                            
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                    <div class="card" >
-                        <img src="/img/long-parameter-list-02.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Tratamiento</h5>
-                          <p class="card-text">Una larga lista de parámetros puede ocurrir cuando se fusionan varios tipos de algoritmos en un solo método, aun que se ase más funcional cuando se tiene sub métodos que al final llegan al método general.</p>
-                          <p class="card-text">Por ende, la refactorización puede revelar código duplicado que antes no se había detectado.</p>
-                        </div>
-                      </div>
-                  </div>
+              <div class="card-container">
+                <div class="card card2" >
+                    <div class="card-img"><img src="img/longparameterlist.png" class="card-img-top" alt="..."></div>
+                    <div class="card-body">
+                      <h5 class="card-title">Descripción</h5>
+                      <p class="card-text">Las largas listas de parámetros también pueden ser el subproducto de los esfuerzos por hacer que las clases sean más independientes entre sí. Por ejemplo, el código para crear objetos específicos necesarios en un método se movió del método al código para llamar al método, pero los objetos creados se pasan al método como parámetros. Por lo tanto, la clase original ya no conoce las relaciones entre los objetos y la dependencia ha disminuido. Pero si se crean varios de estos objetos, cada uno de ellos requerirá su propio parámetro, lo que significa una lista de parámetros más larga.</p>
+                    </div>
                 </div>
+                <div class="card card2" >
+                    <div class="card-img"><img src="img/long-parameter-list-02.png" class="card-img-top" alt="..."></div>
+                    <div class="card-body">
+                      <h5 class="card-title">Tratamiento</h5>
+                      <p class="card-text">Una larga lista de parámetros puede ocurrir cuando se fusionan varios tipos de algoritmos en un solo método, aun que se ase más funcional cuando se tiene sub métodos que al final llegan al método general.</p>
+                      <p class="card-text">Por ende, la refactorización puede revelar código duplicado que antes no se había detectado.</p>
+                    </div>
+                </div>
+              </div>  
+              <button type="button" class="btn btn-primary" @click="showLongParametersChallenge()" v-show="!longparametersConfig.showChallenge">Ir al desafio</button>
             </div>
-            <button type="button" class="btn btn-primary" @click="showLongParametersChallenge()" v-show="!longparametersConfig.showChallenge">Ir al desafio</button>
             <div class="container-fluid" v-show="longparametersConfig.showChallenge">
                 <div class="row">
                   <div class="col">
@@ -778,7 +758,7 @@
                 <div class="row">
                   <div class="col">
                     <div class="card" >
-                        <img src="/img/legacy.png" class="card-img-top" alt="...">
+                        <img src="img/legacy.png" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">Descripcion</h5>
                           <p class="card-text">Si una subclase usa solo algunos de los métodos y propiedades heredados de sus padres, la jerarquía está fuera de lugar. Los métodos innecesarios pueden simplemente no usarse o redefinirse y generar excepciones.</p>
@@ -788,7 +768,7 @@
                   </div>
                   <div class="col">
                     <div class="card" >
-                        <img src="/img/refused-bequest-03.png" class="card-img-top" alt="...">
+                        <img src="img/refused-bequest-03.png" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">Tratamiento</h5>
                           <p class="card-text">cuando una sub clase hereda los métodos y propiedades de su padre.</p>
