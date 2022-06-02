@@ -70,34 +70,34 @@
   <h1 class="title">SmellCodePlay</h1>
   <div class="container-pol">
       <div class="item-pol">
-        <div class="hexagono2"  data-bs-toggle="modal" data-bs-target="#comment-modal"><span  class="text-pol">Nivel 1</span></div>
+        <div class="hexagono2"  data-bs-toggle="modal" data-bs-target="#comment-modal" @click="resetModalComment()"><span  class="text-pol">Nivel 1</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" :data-bs-target="user.points>20?'#blocked-modal':'#duplicatecode-modal'"><span  class="text-pol">Nivel 2</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" :data-bs-target="user.points>20?'#blocked-modal':'#duplicatecode-modal'" @click="resetModalDuplicated()"><span  class="text-pol">Nivel 2</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" :data-bs-target="user.points>10?'#blocked-modal':'#largeclass-modal'"><span  class="text-pol">Nivel 3</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" :data-bs-target="user.points>10?'#blocked-modal':'#largeclass-modal'" @click="resetModalLargeclass()"><span  class="text-pol">Nivel 3</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#featureenvy-modal"><span  class="text-pol">Nivel 4</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#featureenvy-modal"><span  class="text-pol" @click="resetModalFeatureenvy()">Nivel 4</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#longmethod-modal"><span  class="text-pol">Nivel 5</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#longmethod-modal" @click="resetModalLongmethod()"><span  class="text-pol" >Nivel 5</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#dataclass-modal"><span  class="text-pol">Nivel 6</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#dataclass-modal" @click="resetModalDataclass()"><span  class="text-pol">Nivel 6</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#deadcode-modal"><span  class="text-pol">Nivel 7</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#deadcode-modal" @click="resetModalDeadcode()"><span  class="text-pol">Nivel 7</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#swissarmyknife-modal"><span  class="text-pol">Nivel 8 </span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#swissarmyknife-modal" @click="resetModalSwissarmyknife()"><span  class="text-pol">Nivel 8 </span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#longparameters-modal"><span  class="text-pol">Nivel 9</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#longparameters-modal" @click="resetModalLongparameters()"><span  class="text-pol">Nivel 9</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#refusedbequest-modal"><span  class="text-pol">Nivel 10</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#refusedbequest-modal" @click="resetModalRefusedbequest()"><span  class="text-pol">Nivel 10</span></div>
       </div>
   </div>
   <!-- Modal -->

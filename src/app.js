@@ -20,6 +20,56 @@ const app =Vue.createApp({
         init(){
 
         },
+        resetModalComment(){
+            this.commentsConfig.showChallenge=false;
+            this.commentsConfig.editor.setValue('');
+            this.commentsConfig.responseEditor.setValue('');
+        },
+        resetModalDuplicated(){
+            this.duplicatedConfig.showChallenge=false;
+            this.duplicatedConfig.editor.setValue('');
+            this.duplicatedConfig.responseEditor.setValue('');
+        },
+        resetModalDeadcode(){
+            this.deadcodeConfig.showChallenge=false;
+            this.deadcodeConfig.editor.setValue('');
+            this.deadcodeConfig.responseEditor.setValue('');
+        },
+        resetModalDataclass(){
+            this.dataclassConfig.showChallenge=false;
+            this.dataclassConfig.editor.setValue('');
+            this.dataclassConfig.responseEditor.setValue('');
+        },
+        resetModalLongmethod(){
+            this.longmethodConfig.showChallenge=false;
+            this.longmethodConfig.editor.setValue('');
+            this.longmethodConfig.responseEditor.setValue('');
+        },
+        resetModalSwissarmyknife(){
+            this.swissarmyknifeConfig.showChallenge=false;
+            this.swissarmyknifeConfig.editor.setValue('');
+            this.swissarmyknifeConfig.responseEditor.setValue('');
+        },
+        resetModalRefusedbequest(){
+            this.refusedbequestConfig.showChallenge=false;
+            this.refusedbequestConfig.editor.setValue('');
+            this.refusedbequestConfig.responseEditor.setValue('');
+        },
+        resetModalLongparameters(){
+            this.longparametersConfig.showChallenge=false;
+            this.longparametersConfig.editor.setValue('');
+            this.longparametersConfig.responseEditor.setValue('');
+        },
+        resetModalFeatureenvy(){
+            this.featureenvyConfig.showChallenge=false;
+            this.featureenvyConfig.editor.setValue('');
+            this.featureenvyConfig.responseEditor.setValue('');
+        },
+        resetModalLargeclass(){
+            this.largeclassConfig.showChallenge=false;
+            this.largeclassConfig.editor.setValue('');
+            this.largeclassConfig.responseEditor.setValue('');
+        },
         async showCommentChallenge(){
             let txt=await fetch('./challenge/commentexercises.txt');
             let txtCode=await txt.text();
