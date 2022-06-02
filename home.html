@@ -70,34 +70,34 @@
   <h1 class="title">SmellCodePlay</h1>
   <div class="container-pol">
       <div class="item-pol">
-        <div class="hexagono2"  data-bs-toggle="modal" data-bs-target="#comment-modal"><span  class="text-pol">Nivel 1</span></div>
+        <div class="hexagono2"  data-bs-toggle="modal" data-bs-target="#comment-modal" @click="resetModalComment()"><span  class="text-pol">Nivel 1</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" :data-bs-target="user.points>20?'#blocked-modal':'#duplicatecode-modal'"><span  class="text-pol">Nivel 2</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" :data-bs-target="user.points>20?'#blocked-modal':'#duplicatecode-modal'" @click="resetModalDuplicated()"><span  class="text-pol">Nivel 2</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" :data-bs-target="user.points>10?'#blocked-modal':'#largeclass-modal'"><span  class="text-pol">Nivel 3</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" :data-bs-target="user.points>10?'#blocked-modal':'#largeclass-modal'" @click="resetModalLargeclass()"><span  class="text-pol">Nivel 3</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#featureenvy-modal"><span  class="text-pol">Nivel 4</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#featureenvy-modal" @click="resetModalFeatureenvy()"><span class="text-pol">Nivel 4</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#longmethod-modal"><span  class="text-pol">Nivel 5</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#longmethod-modal" @click="resetModalLongmethod()"><span  class="text-pol" >Nivel 5</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#dataclass-modal"><span  class="text-pol">Nivel 6</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#dataclass-modal" @click="resetModalDataclass()"><span  class="text-pol">Nivel 6</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#deadcode-modal"><span  class="text-pol">Nivel 7</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#deadcode-modal" @click="resetModalDeadcode()"><span  class="text-pol">Nivel 7</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#swissarmyknife-modal"><span  class="text-pol">Nivel 8 </span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#swissarmyknife-modal" @click="resetModalSwissarmyknife()"><span  class="text-pol">Nivel 8 </span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#longparameters-modal"><span  class="text-pol">Nivel 9</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#longparameters-modal" @click="resetModalLongparameters()"><span  class="text-pol">Nivel 9</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#refusedbequest-modal"><span  class="text-pol">Nivel 10</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#refusedbequest-modal" @click="resetModalRefusedbequest()"><span  class="text-pol">Nivel 10</span></div>
       </div>
   </div>
   <!-- Modal -->
@@ -139,12 +139,22 @@
                           <div class="cardContent-form card2">
                             <p class="w-600">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
                             <form action="#">
+<<<<<<< HEAD
                               <label class="form-control"><input name='input_name' type='radio' value="metodo_largo"> Método Largo</label>
                               <label class="form-control"><input name='input_name' type='radio' value="comentario"> Comentario</label>
                               <label class="form-control"><input name='input_name' type='radio' value="clase_larga"> Clase Larga</label>
                               <label class="form-control"><input name='input_name' type='radio' value="clase_datos"> Clase de Datos</label>
                               <label class="form-control"><input name='input_name' type='radio' value="nose"> No lo sé</label>
                               <button type="button" class="btn btn-success mt-10" @click="reviewAnswer('comments')"  >Verificar</button>
+=======
+                              <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                              <label for="vehicle1"> I have a bike</label><br>
+                              <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                              <label for="vehicle2"> I have a car</label><br>
+                              <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                              <label for="vehicle3"> I have a boat</label><br>
+                              <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('comments')"  >Verificar</button>
+>>>>>>> e8899928895ab4e8c0fe8970f5b13cedb8cd83a6
                             </form>
                           </div>
                         </div>
@@ -196,30 +206,24 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                          <div>
-                            <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
-                          </div>
-                            <div id="duplicatedcode-txt">
-                                
-                            </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                    <div class="card" >
-                        <div class="card-body">
-                            <div id="duplicatedcode-response-txt">
-                                
+                            <div id="duplicatedcode-txt" class="cardContent-code"></div>
+                            <div class="cardContent-form">
+                              <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                              <form action="#">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I have a bike</label><br>
+                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                <label for="vehicle2"> I have a car</label><br>
+                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                <label for="vehicle3"> I have a boat</label><br>
+                                <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('duplicatedcode')"  >Verificar</button>
+                              </form>
                             </div>
                         </div>
                       </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('duplicatedcode')"  >Verificar</button>
             </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -262,31 +266,23 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div>
-                              <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
-                            </div>
-                            <div id="largeclass-txt">
-                                
-                            </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                    <div class="card" >
-                        <div class="card-body">
-                            <div id="largeclass-response-txt">
-                                
-                            </div>
+                            <div id="largeclass-txt" class="cardContent-code"></div>
+                            <div class="cardContent-form">
+                              <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                              <form action="#">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I have a bike</label><br>
+                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                <label for="vehicle2"> I have a car</label><br>
+                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                <label for="vehicle3"> I have a boat</label><br>
+                                <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('largeclass')"  >Verificar</button>
+                              </form>
                         </div>
                       </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('largeclass')"  >Verificar</button>
             </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
@@ -328,31 +324,24 @@
                       <div class="col">
                         <div class="card" >
                             <div class="card-body">
-                                <div>
-                                  <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
-                                </div>
-                                <div id="featureenvy-txt">
-                                    
-                                </div>
-                            </div>
-                          </div>
-                      </div>
-                      <div class="col">
-                        <div class="card" >
-                            <div class="card-body">
-                                <div id="featureenvy-response-txt">
-                                    
+                                <div id="featureenvy-txt" class="cardContent-code"></div>
+                                <div class="cardContent-form">
+                                    <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                                    <form action="#">
+                                      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                      <label for="vehicle1"> I have a bike</label><br>
+                                      <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                      <label for="vehicle2"> I have a car</label><br>
+                                      <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                      <label for="vehicle3"> I have a boat</label><br>
+                                      <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('featureenvy')"  >Verificar</button>
+                                    </form>
                                 </div>
                             </div>
                           </div>
                       </div>
                     </div>
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('featureenvy')"  >Verificar</button>
                 </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
@@ -394,31 +383,24 @@
                       <div class="col">
                         <div class="card" >
                             <div class="card-body">
-                                <div id="longmethod-txt">
-                                    
-                                </div>
-                            </div>
-                          </div>
-                      </div>
-                      <div class="col">
-                        <div class="card" >
-                            <div class="card-body">
-                                <div>
-                                  <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
-                                </div>
-                                <div id="longmethod-response-txt">
-                                    
-                                </div>
+                                <div id="longmethod-txt" class="cardContent-code"></div>
+                                <div class="cardContent-form">
+                                  <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                                  <form action="#">
+                                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                    <label for="vehicle1"> I have a bike</label><br>
+                                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                    <label for="vehicle2"> I have a car</label><br>
+                                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                    <label for="vehicle3"> I have a boat</label><br> 
+                                    <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('longmethod')"  >Verificar</button>
+                                  </form>
+                              </div>
                             </div>
                           </div>
                       </div>
                     </div>
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('longmethod')"  >Verificar</button>
                 </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
@@ -461,31 +443,24 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div>
-                              <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
-                            </div>
-                            <div id="dataclass-txt">
-                                
-                            </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                    <div class="card" >
-                        <div class="card-body">
-                            <div id="dataclass-response-txt">
-                                
-                            </div>
+                            <div id="dataclass-txt" class="cardContent-code"></div>
+                            <div class="cardContent-form">
+                              <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                              <form action="#">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I have a bike</label><br>
+                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                <label for="vehicle2"> I have a car</label><br>
+                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                <label for="vehicle3"> I have a boat</label><br>
+                                <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('dataclass')"  >Verificar</button>
+                              </form>
+                          </div>
                         </div>
                       </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('dataclass')"  >Verificar</button>
             </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
@@ -528,31 +503,24 @@
                       <div class="col">
                         <div class="card" >
                             <div class="card-body">
-                                <div>
-                                  <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
-                                </div>
-                                <div id="deadcode-txt">
-                                    
-                                </div>
-                            </div>
-                          </div>
-                      </div>
-                      <div class="col">
-                        <div class="card" >
-                            <div class="card-body">
-                                <div id="deadcode-response-txt">
-                                    
-                                </div>
+                                <div id="deadcode-txt" class="cardContent-code"></div>
+                                <div class="cardContent-form">
+                                  <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                                  <form action="#">
+                                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                    <label for="vehicle1"> I have a bike</label><br>
+                                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                    <label for="vehicle2"> I have a car</label><br>
+                                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                    <label for="vehicle3"> I have a boat</label><br>
+                                    <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('deadcode')"  >Verificar</button>
+                                  </form>
+                              </div>
                             </div>
                           </div>
                       </div>
                     </div>
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('deadcode')"  >Verificar</button>
                 </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
@@ -594,31 +562,24 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div>
-                              <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
-                            </div>
-                            <div id="swissarmyknife-txt">
-                                
-                            </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                    <div class="card" >
-                        <div class="card-body">
-                            <div id="swissarmyknife-response-txt">
-                                
-                            </div>
+                            <div id="swissarmyknife-txt" class="cardContent-code"></div>
+                            <div class="cardContent-form">
+                              <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                              <form action="#">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I have a bike</label><br>
+                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                <label for="vehicle2"> I have a car</label><br>
+                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                <label for="vehicle3"> I have a boat</label><br>
+                                <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('swissarmyknife')"  >Verificar</button>
+                              </form>
+                          </div>
                         </div>
                       </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('swissarmyknife')"  >Verificar</button>
             </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
@@ -660,31 +621,24 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div>
-                              <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
-                            </div>
-                            <div id="longparameters-txt">
-                                
-                            </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                    <div class="card" >
-                        <div class="card-body">
-                            <div id="longparameters-response-txt">
-                                
-                            </div>
+                            <div id="longparameters-txt" class="cardContent-code"></div>
+                            <div class="cardContent-form">
+                              <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                              <form action="#">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I have a bike</label><br>
+                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                <label for="vehicle2"> I have a car</label><br>
+                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                <label for="vehicle3"> I have a boat</label><br>
+                                <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('longparameters')"  >Verificar</button>
+                              </form>
+                          </div>
                         </div>
                       </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('longparameters')"  >Verificar</button>
             </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
@@ -802,31 +756,24 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
-                            <div>
-                              <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
-                            </div>
-                            <div id="refusedbequest-txt">
-                                
-                            </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                    <div class="card" >
-                        <div class="card-body">
-                            <div id="refusedbequest-response-txt">
-                                
-                            </div>
+                            <div id="refusedbequest-txt" class="cardContent-code"></div>
+                            <div class="cardContent-form">
+                              <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                              <form action="#">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I have a bike</label><br>
+                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                <label for="vehicle2"> I have a car</label><br>
+                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                <label for="vehicle3"> I have a boat</label><br>
+                                <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('refusedbequest')"  >Verificar</button>
+                              </form>
+                          </div>
                         </div>
                       </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('refusedbequest')"  >Verificar</button>
             </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
