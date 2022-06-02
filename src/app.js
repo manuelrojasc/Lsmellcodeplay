@@ -1,4 +1,5 @@
-
+var upsModal = new bootstrap.Modal(document.getElementById('ups'));
+var goodModal = new bootstrap.Modal(document.getElementById('good'));
 const app =Vue.createApp({
    data() {
       return {
@@ -44,12 +45,14 @@ const app =Vue.createApp({
             let txt=await fetch('./challenge/duplicatedcodeexercises.txt');
             let txtCode=await txt.text();
             this.duplicatedConfig.showChallenge = true;
+            setTimeout(() => {
             this.duplicatedConfig.editor = CodeMirror(document.getElementById('duplicatedcode-txt'),{
                 value: txtCode,
                 mode: "text/x-java",
                 lineNumbers:true,
                 theme: 'mbo',
              });
+            }, 300);
             this.duplicatedConfig.responseEditor = CodeMirror(document.getElementById('duplicatedcode-response-txt'),{
             value: '',
             mode: "text/x-java",
@@ -61,12 +64,14 @@ const app =Vue.createApp({
             let txt=await fetch('./challenge/deadcodeexercises.txt');
             let txtCode=await txt.text();
             this.deadcodeConfig.showChallenge = true;
+            setTimeout(() => {
             this.deadcodeConfig.editor = CodeMirror(document.getElementById('deadcode-txt'),{
                 value: txtCode,
                 mode: "text/x-java",
                 lineNumbers:true,
                 theme: 'mbo',
              });
+            }, 300);
             this.deadcodeConfig.responseEditor = CodeMirror(document.getElementById('deadcode-response-txt'),{
               value: '',
             mode: "text/x-java",
@@ -78,12 +83,14 @@ const app =Vue.createApp({
             let txt=await fetch('./challenge/dataclassexercises.txt');
             let txtCode=await txt.text();
             this.dataclassConfig.showChallenge = true;
+            setTimeout(() => {
             this.dataclassConfig.editor = CodeMirror(document.getElementById('dataclass-txt'),{
                 value: txtCode,
                 mode: "text/x-java",
                 lineNumbers:true,
                 theme: 'mbo',
              });
+            }, 300);
             this.dataclassConfig.responseEditor = CodeMirror(document.getElementById('dataclass-response-txt'),{
               value: '',
             mode: "text/x-java",
@@ -95,12 +102,14 @@ const app =Vue.createApp({
             let txt=await fetch('./challenge/longmethodexercises.txt');
             let txtCode=await txt.text();
             this.longmethodConfig.showChallenge = true;
+            setTimeout(() => {
             this.longmethodConfig.editor = CodeMirror(document.getElementById('longmethod-txt'),{
                 value: txtCode,
                 mode: "text/x-java",
                 lineNumbers:true,
                 theme: 'mbo',
              });
+            }, 300);
             this.longmethodConfig.responseEditor = CodeMirror(document.getElementById('longmethod-response-txt'),{
               value: '',
             mode: "text/x-java",
@@ -112,12 +121,14 @@ const app =Vue.createApp({
             let txt=await fetch('./challenge/swissarmyknifeexercises.txt');
             let txtCode=await txt.text();
             this.swissarmyknifeConfig.showChallenge = true;
+            setTimeout(() => {
             this.swissarmyknifeConfig.editor = CodeMirror(document.getElementById('swissarmyknife-txt'),{
                 value: txtCode,
                 mode: "text/x-java",
                 lineNumbers:true,
                 theme: 'mbo',
              });
+            }, 300);
             this.swissarmyknifeConfig.responseEditor = CodeMirror(document.getElementById('swissarmyknife-response-txt'),{
               value: '',
             mode: "text/x-java",
@@ -129,12 +140,14 @@ const app =Vue.createApp({
             let txt=await fetch('./challenge/refusedbequestexercises.txt');
             let txtCode=await txt.text();
             this.refusedbequestConfig.showChallenge = true;
+            setTimeout(() => {
             this.refusedbequestConfig.editor = CodeMirror(document.getElementById('refusedbequest-txt'),{
                 value: txtCode,
                 mode: "text/x-java",
                 lineNumbers:true,
                 theme: 'mbo',
              });
+            }, 300);
             this.refusedbequestConfig.responseEditor = CodeMirror(document.getElementById('refusedbequest-response-txt'),{
               value: '',
             mode: "text/x-java",
@@ -146,12 +159,14 @@ const app =Vue.createApp({
             let txt=await fetch('./challenge/longparametersexercises.txt');
             let txtCode=await txt.text();
             this.longparametersConfig.showChallenge = true;
+            setTimeout(() => {
             this.longparametersConfig.editor = CodeMirror(document.getElementById('longparameters-txt'),{
                 value: txtCode,
                 mode: "text/x-java",
                 lineNumbers:true,
                 theme: 'mbo',
              });
+            }, 300);
             this.longparametersConfig.responseEditor = CodeMirror(document.getElementById('longparameters-response-txt'),{
               value: '',
             mode: "text/x-java",
@@ -163,12 +178,14 @@ const app =Vue.createApp({
             let txt=await fetch('./challenge/featureenvyexercises.txt');
             let txtCode=await txt.text();
             this.featureenvyConfig.showChallenge = true;
+            setTimeout(() => {
             this.featureenvyConfig.editor = CodeMirror(document.getElementById('featureenvy-txt'),{
                 value: txtCode,
                 mode: "text/x-java",
                 lineNumbers:true,
                 theme: 'mbo',
              });
+            }, 300);
             this.featureenvyConfig.responseEditor = CodeMirror(document.getElementById('featureenvy-response-txt'),{
               value: '',
             mode: "text/x-java",
@@ -180,12 +197,14 @@ const app =Vue.createApp({
             let txt=await fetch('./challenge/largeclassexercises.txt');
             let txtCode=await txt.text();
             this.largeclassConfig.showChallenge = true;
+            setTimeout(() => {
             this.largeclassConfig.editor = CodeMirror(document.getElementById('largeclass-txt'),{
                 value: txtCode,
                 mode: "text/x-java",
                 lineNumbers:true,
                 theme: 'mbo',
              });
+            }, 300);
             this.largeclassConfig.responseEditor = CodeMirror(document.getElementById('largeclass-response-txt'),{
               value: '',
             mode: "text/x-java",
