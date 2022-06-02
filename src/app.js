@@ -22,53 +22,33 @@ const app =Vue.createApp({
         },
         resetModalComment(){
             this.commentsConfig.showChallenge=false;
-            this.commentsConfig.editor.setValue('');
-            this.commentsConfig.responseEditor.setValue('');
         },
         resetModalDuplicated(){
             this.duplicatedConfig.showChallenge=false;
-            this.duplicatedConfig.editor.setValue('');
-            this.duplicatedConfig.responseEditor.setValue('');
+        },
+        resetModalLargeclass(){
+          this.largeclassConfig.showChallenge=false;
         },
         resetModalDeadcode(){
             this.deadcodeConfig.showChallenge=false;
-            this.deadcodeConfig.editor.setValue('');
-            this.deadcodeConfig.responseEditor.setValue('');
         },
         resetModalDataclass(){
             this.dataclassConfig.showChallenge=false;
-            this.dataclassConfig.editor.setValue('');
-            this.dataclassConfig.responseEditor.setValue('');
         },
         resetModalLongmethod(){
             this.longmethodConfig.showChallenge=false;
-            this.longmethodConfig.editor.setValue('');
-            this.longmethodConfig.responseEditor.setValue('');
         },
         resetModalSwissarmyknife(){
             this.swissarmyknifeConfig.showChallenge=false;
-            this.swissarmyknifeConfig.editor.setValue('');
-            this.swissarmyknifeConfig.responseEditor.setValue('');
         },
         resetModalRefusedbequest(){
             this.refusedbequestConfig.showChallenge=false;
-            this.refusedbequestConfig.editor.setValue('');
-            this.refusedbequestConfig.responseEditor.setValue('');
         },
         resetModalLongparameters(){
             this.longparametersConfig.showChallenge=false;
-            this.longparametersConfig.editor.setValue('');
-            this.longparametersConfig.responseEditor.setValue('');
         },
         resetModalFeatureenvy(){
             this.featureenvyConfig.showChallenge=false;
-            this.featureenvyConfig.editor.setValue('');
-            this.featureenvyConfig.responseEditor.setValue('');
-        },
-        resetModalLargeclass(){
-            this.largeclassConfig.showChallenge=false;
-            this.largeclassConfig.editor.setValue('');
-            this.largeclassConfig.responseEditor.setValue('');
         },
         async showCommentChallenge(){
             let txt=await fetch('./challenge/commentexercises.txt');
@@ -83,14 +63,7 @@ const app =Vue.createApp({
                 lineNumbers:true,
                 theme: 'mbo',
              });
-            }, 300);
-            
-            this.commentsConfig.responseEditor = CodeMirror(document.getElementById('comment-response-txt'),{
-            value: '',
-            mode: "text/x-java",
-            lineNumbers:true,
-            theme: 'mbo',
-            });  
+            }, 300);  
         },
         async showDuplicatedCodeChallenge(){
             let txt=await fetch('./challenge/duplicatedcodeexercises.txt');
@@ -104,14 +77,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
-            }, 300);
-
-            this.duplicatedConfig.responseEditor = CodeMirror(document.getElementById('duplicatedcode-response-txt'),{
-              value: '',
-              mode: "text/x-java",
-              lineNumbers:true,
-              theme: 'mbo',
-              });   
+            }, 300);   
         },
         async showDeadCodeChallenge(){
             let txt=await fetch('./challenge/deadcodeexercises.txt');
@@ -125,13 +91,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
-            }, 300);
-            this.deadcodeConfig.responseEditor = CodeMirror(document.getElementById('deadcode-response-txt'),{
-              value: '',
-            mode: "text/x-java",
-            lineNumbers:true,
-            theme: 'mbo',
-            });  
+            }, 300);  
         },
         async showDataClassChallenge(){
             let txt=await fetch('./challenge/dataclassexercises.txt');
@@ -145,13 +105,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
-            }, 300);
-            this.dataclassConfig.responseEditor = CodeMirror(document.getElementById('dataclass-response-txt'),{
-              value: '',
-            mode: "text/x-java",
-            lineNumbers:true,
-            theme: 'mbo',
-            });  
+            }, 300);  
         },
         async showLongMethodChallenge(){
             let txt=await fetch('./challenge/longmethodexercises.txt');
@@ -165,13 +119,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
-            }, 300);
-            this.longmethodConfig.responseEditor = CodeMirror(document.getElementById('longmethod-response-txt'),{
-              value: '',
-            mode: "text/x-java",
-            lineNumbers:true,
-            theme: 'mbo',
-            });  
+            }, 300); 
         },
         async showSwissArmyKnaifeChallenge(){
             let txt=await fetch('./challenge/swissarmyknifeexercises.txt');
@@ -185,13 +133,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
-            }, 300);
-            this.swissarmyknifeConfig.responseEditor = CodeMirror(document.getElementById('swissarmyknife-response-txt'),{
-              value: '',
-            mode: "text/x-java",
-            lineNumbers:true,
-            theme: 'mbo',
-            });  
+            }, 300);  
         },
         async showRefusedBequestChallenge(){
             let txt=await fetch('./challenge/refusedbequestexercises.txt');
@@ -205,13 +147,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
-            }, 300);
-            this.refusedbequestConfig.responseEditor = CodeMirror(document.getElementById('refusedbequest-response-txt'),{
-              value: '',
-            mode: "text/x-java",
-            lineNumbers:true,
-            theme: 'mbo',
-            });  
+            }, 300); 
         },
         async showLongParametersChallenge(){
             let txt=await fetch('./challenge/longparametersexercises.txt');
@@ -225,13 +161,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
-            }, 300);
-            this.longparametersConfig.responseEditor = CodeMirror(document.getElementById('longparameters-response-txt'),{
-              value: '',
-            mode: "text/x-java",
-            lineNumbers:true,
-            theme: 'mbo',
-            });  
+            }, 300); 
         },
         async showFeatureEnvyChallenge(){
             let txt=await fetch('./challenge/featureenvyexercises.txt');
@@ -245,13 +175,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
-            }, 300);
-            this.featureenvyConfig.responseEditor = CodeMirror(document.getElementById('featureenvy-response-txt'),{
-              value: '',
-              mode: "text/x-java",
-              lineNumbers:true,
-              theme: 'mbo',
-            });  
+            }, 300);  
         },
         async showLargeClassChallenge(){
             let txt=await fetch('./challenge/largeclassexercises.txt');
@@ -265,13 +189,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
-            }, 300);
-            this.largeclassConfig.responseEditor = CodeMirror(document.getElementById('largeclass-response-txt'),{
-              value: '',
-            mode: "text/x-java",
-            lineNumbers:true,
-            theme: 'mbo',
-            });  
+            }, 300);  
         },
 
         async showSwissArmyknifeChallenge(){
@@ -286,13 +204,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
-            }, 300);
-            this.swissarmyknifeConfig.responseEditor = CodeMirror(document.getElementById('swissarmyknife-response-txt'),{
-              value: '',
-            mode: "text/x-java",
-            lineNumbers:true,
-            theme: 'mbo',
-            });  
+            }, 300);  
         },
 
         reviewAnswer(smmellName){
@@ -340,134 +252,134 @@ const app =Vue.createApp({
         },
 
         reviewCommentAnswer(){
-            let code = this.commentsConfig.responseEditor.getValue();
+            let code = ""
             //analizar el codigo escrito y encontrar 
-            console.log(code);
+           // console.log(code);
             this.commentsConfig.showChallenge=false;
-            if( code.indexOf("//")>0 ){
+           /* if( code.indexOf("//")>0 ){
               upsModal.show();
             }else{
               this.user.points+=10;
               goodModal.show();
-            }
+            }*/
         },
 
         reviewLongMethodAnswer(){
-            let code = this.longmethodConfig.responseEditor.getValue();
+            let code =""
             //analizar el codigo escrito y encontrar 
             console.log(code);
             this.longmethodConfig.showChallenge=false;
-            if( code.indexOf("//")>0 ){
+            /*if( code.indexOf("//")>0 ){
               upsModal.show();
             }else{
               this.user.points+=10;
               goodModal.show();
-            }
+            }*/
         },
 
         reviewDataClassAnswer(){
-            let code = this.dataclassConfig.responseEditor.getValue();
+            let code = ""
             //analizar el codigo escrito y encontrar 
             console.log(code);
             this.dataclassConfig.showChallenge=false;
-            if( code.indexOf("//")>0 ){
+            /*if( code.indexOf("//")>0 ){
               upsModal.show();
             }else{
               this.user.points+=10;
               goodModal.show();
-            }
+            }*/
         },
 
         reviewDeadCodeAnswer(){
-            let code = this.deadcodeConfig.responseEditor.getValue();
+            let code = ""
             //analizar el codigo escrito y encontrar 
             console.log(code);
             this.deadcodeConfig.showChallenge=false;
-            if( code.indexOf("//")>0 ){
+            /*if( code.indexOf("//")>0 ){
               upsModal.show();
             }else{
               this.user.points+=10;
               goodModal.show();
-            }
+            }*/
         },
 
         reviewDuplicatedCodeAnswer(){
-            let code = this.duplicatedcodeConfig.responseEditor.getValue();
+            let code = "";
             console.log(code);
             //analizar el codigo escrito y encontrar 
             console.log(code);
-            this.duplicatedcodeConfig.showChallenge=false;
-            if( code.indexOf("//")>0 ){
+            this.duplicatedConfig.showChallenge=false;
+            /*if( code.indexOf("//")>0 ){
               upsModal.show();
             }else{
               this.user.points+=10;
               goodModal.show();
-            }
+            }*/
         },
 
         reviewFeatureEnvyAnswer(){
-            let code = this.featureenvyConfig.responseEditor.getValue();
+            let code = "";
             //analizar el codigo escrito y encontrar 
             console.log(code);
             this.featureenvyConfig.showChallenge=false;
-            if( code.indexOf("//")>0 ){
+           /* if( code.indexOf("//")>0 ){
               upsModal.show();
             }else{
               this.user.points+=10;
               goodModal.show();
-            }
+            }*/
         },
 
         reviewLargeClassAnswer(){
-            let code = this.largeclassConfig.responseEditor.getValue();
+            let code = "";
             //analizar el codigo escrito y encontrar 
             console.log(code);
             this.largeclassConfig.showChallenge=false;
-            if( code.indexOf("//")>0 ){
+           /* if( code.indexOf("//")>0 ){
               upsModal.show();
             }else{
               this.user.points+=10;
               goodModal.show();
-            }
+            }*/
         },
 
         reviewRefusedBequestAnswer(){
-            let code = this.refusedbequestConfig.responseEditor.getValue();
+            let code = "";
             //analizar el codigo escrito y encontrar 
             console.log(code);
             this.refusedbequestConfig.showChallenge=false;
-            if( code.indexOf("//")>0 ){
+           /* if( code.indexOf("//")>0 ){
               upsModal.show();
             }else{
               this.user.points+=10;
               goodModal.show();
-            }
+            }*/
         },
 
         reviewLongParametersAnswer(){
-            let code = this.longparametersConfig.responseEditor.getValue();
+            let code = "";
             //analizar el codigo escrito y encontrar 
             console.log(code);
             this.longparametersConfig.showChallenge=false;
-            if( code.indexOf("//")>0 ){
+            /*if( code.indexOf("//")>0 ){
               upsModal.show();
             }else{
               this.user.points+=10;
               goodModal.show();
-            }
+            }*/
         },
 
         reviewSwissArmyKnifeAnswer(){
-            let code = this.swissarmyknifeConfig.responseEditor.getValue();
+            let code = "";
             //analizar el codigo escrito y encontrar 
             console.log(code);
             this.swissarmyknifeConfig.showChallenge=false;
-            if( code.indexOf("//")>0 ){
+           /* if( code.indexOf("//")>0 ){
               upsModal.show();
             }else{
               this.user.points+=10;
               goodModal.show();
-            }
+            }*/
         },
         reviewModalAnswer(){
           this.user.initModal = false;
