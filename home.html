@@ -190,25 +190,26 @@
               </div>
               <button type="button" class="btn btn-primary" @click="showDuplicatedCodeChallenge()" v-show="!duplicatedConfig.showChallenge">Ir al desafio</button>
             </div>
-
+            
             <div class="container-fluid" v-show="duplicatedConfig.showChallenge">
                 <div class="row">
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
+                          <div class="cardContent">
                             <div id="duplicatedcode-txt" class="cardContent-code"></div>
-                            <div class="cardContent-form">
-                              <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                            <div class="cardContent-form card2">
+                              <p class="w-600">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
                               <form action="#">
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                <label for="vehicle1"> I have a bike</label><br>
-                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                <label for="vehicle2"> I have a car</label><br>
-                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                <label for="vehicle3"> I have a boat</label><br>
+                                <label class="form-control"><input name='input_name' type='radio' value="metodo_largo"> Método Largo</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="comentario"> Comentario</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="clase_larga"> Clase Larga</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="clase_datos"> Clase de Datos</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="nose"> No lo sé</label>
                                 <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('duplicatedcode')"  >Verificar</button>
                               </form>
                             </div>
+                          </div>
                         </div>
                       </div>
                   </div>
@@ -256,19 +257,20 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
+                          <div class="cardContent">
                             <div id="largeclass-txt" class="cardContent-code"></div>
-                            <div class="cardContent-form">
-                              <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                            <div class="cardContent-form card2">
+                              <p class="w-600">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
                               <form action="#">
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                <label for="vehicle1"> I have a bike</label><br>
-                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                <label for="vehicle2"> I have a car</label><br>
-                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                <label for="vehicle3"> I have a boat</label><br>
-                                <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('largeclass')"  >Verificar</button>
+                                <label class="form-control"><input name='input_name' type='radio' value="metodo_largo"> Método Largo</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="comentario"> Comentario</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="clase_larga"> Clase Larga</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="clase_datos"> Clase de Datos</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="nose"> No lo sé</label>
+                                <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('largeclass')" >Verificar</button>
                               </form>
-                        </div>
+                            </div>
+                          </div>
                       </div>
                   </div>
                 </div>
@@ -276,6 +278,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
   <!-- fin clase larga-->
 
@@ -314,19 +317,20 @@
                       <div class="col">
                         <div class="card" >
                             <div class="card-body">
+                              <div class="cardContent">
                                 <div id="featureenvy-txt" class="cardContent-code"></div>
-                                <div class="cardContent-form">
-                                    <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
-                                    <form action="#">
-                                      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                      <label for="vehicle1"> I have a bike</label><br>
-                                      <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                      <label for="vehicle2"> I have a car</label><br>
-                                      <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                      <label for="vehicle3"> I have a boat</label><br>
-                                      <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('featureenvy')"  >Verificar</button>
-                                    </form>
+                                <div class="cardContent-form card2">
+                                  <p class="w-600">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                                  <form action="#">
+                                    <label class="form-control"><input name='input_name' type='radio' value="metodo_largo"> Método Largo</label>
+                                    <label class="form-control"><input name='input_name' type='radio' value="comentario"> Comentario</label>
+                                    <label class="form-control"><input name='input_name' type='radio' value="clase_larga"> Clase Larga</label>
+                                    <label class="form-control"><input name='input_name' type='radio' value="clase_datos"> Clase de Datos</label>
+                                    <label class="form-control"><input name='input_name' type='radio' value="nose"> No lo sé</label>
+                                    <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('featureenvy')" >Verificar</button>
+                                  </form>
                                 </div>
+                              </div>
                             </div>
                           </div>
                       </div>
@@ -335,7 +339,7 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
 
   <!-- fin caracteristica envidia-->
 
@@ -373,18 +377,19 @@
                       <div class="col">
                         <div class="card" >
                             <div class="card-body">
+                              <div class="cardContent">
                                 <div id="longmethod-txt" class="cardContent-code"></div>
-                                <div class="cardContent-form">
-                                  <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                                <div class="cardContent-form card2">
+                                  <p class="w-600">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
                                   <form action="#">
-                                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                    <label for="vehicle1"> I have a bike</label><br>
-                                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                    <label for="vehicle2"> I have a car</label><br>
-                                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                    <label for="vehicle3"> I have a boat</label><br> 
+                                    <label class="form-control"><input name='input_name' type='radio' value="metodo_largo"> Método Largo</label>
+                                    <label class="form-control"><input name='input_name' type='radio' value="comentario"> Comentario</label>
+                                    <label class="form-control"><input name='input_name' type='radio' value="clase_larga"> Clase Larga</label>
+                                    <label class="form-control"><input name='input_name' type='radio' value="clase_datos"> Clase de Datos</label>
+                                    <label class="form-control"><input name='input_name' type='radio' value="nose"> No lo sé</label>
                                     <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('longmethod')"  >Verificar</button>
                                   </form>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -433,18 +438,19 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
+                          <div class="cardContent">
                             <div id="dataclass-txt" class="cardContent-code"></div>
-                            <div class="cardContent-form">
-                              <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                            <div class="cardContent-form card2">
+                              <p class="w-600">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
                               <form action="#">
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                <label for="vehicle1"> I have a bike</label><br>
-                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                <label for="vehicle2"> I have a car</label><br>
-                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                <label for="vehicle3"> I have a boat</label><br>
-                                <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('dataclass')"  >Verificar</button>
+                                <label class="form-control"><input name='input_name' type='radio' value="metodo_largo"> Método Largo</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="comentario"> Comentario</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="clase_larga"> Clase Larga</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="clase_datos"> Clase de Datos</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="nose"> No lo sé</label>
+                                <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('dataclass')" >Verificar</button>
                               </form>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -493,18 +499,19 @@
                       <div class="col">
                         <div class="card" >
                             <div class="card-body">
+                              <div class="cardContent">
                                 <div id="deadcode-txt" class="cardContent-code"></div>
-                                <div class="cardContent-form">
-                                  <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                                <div class="cardContent-form card2">
+                                  <p class="w-600">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
                                   <form action="#">
-                                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                    <label for="vehicle1"> I have a bike</label><br>
-                                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                    <label for="vehicle2"> I have a car</label><br>
-                                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                    <label for="vehicle3"> I have a boat</label><br>
-                                    <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('deadcode')"  >Verificar</button>
+                                    <label class="form-control"><input name='input_name' type='radio' value="metodo_largo"> Método Largo</label>
+                                    <label class="form-control"><input name='input_name' type='radio' value="comentario"> Comentario</label>
+                                    <label class="form-control"><input name='input_name' type='radio' value="clase_larga"> Clase Larga</label>
+                                    <label class="form-control"><input name='input_name' type='radio' value="clase_datos"> Clase de Datos</label>
+                                    <label class="form-control"><input name='input_name' type='radio' value="nose"> No lo sé</label>
+                                    <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('deadcode')" >Verificar</button>
                                   </form>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -552,18 +559,19 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
+                          <div class="cardContent">
                             <div id="swissarmyknife-txt" class="cardContent-code"></div>
-                            <div class="cardContent-form">
-                              <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                            <div class="cardContent-form card2">
+                              <p class="w-600">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
                               <form action="#">
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                <label for="vehicle1"> I have a bike</label><br>
-                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                <label for="vehicle2"> I have a car</label><br>
-                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                <label for="vehicle3"> I have a boat</label><br>
-                                <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('swissarmyknife')"  >Verificar</button>
+                                <label class="form-control"><input name='input_name' type='radio' value="metodo_largo"> Método Largo</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="comentario"> Comentario</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="clase_larga"> Clase Larga</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="clase_datos"> Clase de Datos</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="nose"> No lo sé</label>
+                                <button type="button" class="btn btn-success mt-10"  data-bs-dismiss="modal" @click="reviewAnswer('swissarmyknife')"  >Verificar</button>
                               </form>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -611,18 +619,19 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
+                          <div class="cardContent">
                             <div id="longparameters-txt" class="cardContent-code"></div>
-                            <div class="cardContent-form">
-                              <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                            <div class="cardContent-form card2">
+                              <p class="w-600">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
                               <form action="#">
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                <label for="vehicle1"> I have a bike</label><br>
-                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                <label for="vehicle2"> I have a car</label><br>
-                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                <label for="vehicle3"> I have a boat</label><br>
+                                <label class="form-control"><input name='input_name' type='radio' value="metodo_largo"> Método Largo</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="comentario"> Comentario</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="clase_larga"> Clase Larga</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="clase_datos"> Clase de Datos</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="nose"> No lo sé</label>
                                 <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('longparameters')"  >Verificar</button>
                               </form>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -746,18 +755,19 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
+                          <div class="cardContent">
                             <div id="refusedbequest-txt" class="cardContent-code"></div>
-                            <div class="cardContent-form">
-                              <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                            <div class="cardContent-form card2">
+                              <p class="w-600">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
                               <form action="#">
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                <label for="vehicle1"> I have a bike</label><br>
-                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                <label for="vehicle2"> I have a car</label><br>
-                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                <label for="vehicle3"> I have a boat</label><br>
-                                <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('refusedbequest')"  >Verificar</button>
+                                <label class="form-control"><input name='input_name' type='radio' value="metodo_largo"> Método Largo</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="comentario"> Comentario</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="clase_larga"> Clase Larga</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="clase_datos"> Clase de Datos</label>
+                                <label class="form-control"><input name='input_name' type='radio' value="nose"> No lo sé</label>
+                                <button type="button" class="btn btn-success mt-10" data-bs-dismiss="modal" @click="reviewAnswer('refusedbequest')">Verificar</button>
                               </form>
+                            </div>
                           </div>
                         </div>
                       </div>
