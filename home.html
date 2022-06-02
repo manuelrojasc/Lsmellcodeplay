@@ -88,7 +88,7 @@
         <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#dataclass-modal"><span  class="text-pol">Nivel 6</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#largeclass-modal"><span  class="text-pol">Nivel 7</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#deadcode-modal"><span  class="text-pol">Nivel 7</span></div>
       </div>
       <div class="item-pol">
         <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#swissarmyknife-modal"><span  class="text-pol">Nivel 8 </span></div>
@@ -97,7 +97,7 @@
         <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#longparameters-modal"><span  class="text-pol">Nivel 9</span></div>
       </div>
       <div class="item-pol">
-        <div class="hexagono2 inactive"  data-bs-toggle="modal" data-bs-target="#refusedbequest-modal"><span  class="text-pol">Nivel 10</span></div>
+        <div class="hexagono2 hexa-inactive"  data-bs-toggle="modal" data-bs-target="#refusedbequest-modal"><span  class="text-pol">Nivel 10</span></div>
       </div>
   </div>
   <!-- Modal -->
@@ -153,7 +153,7 @@
                   </div>
               </div>
             </div>
-            <button type="button" class="btn btn-secondary" @click="reviewAnswer('comments')"  >Verificar</button>
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('comments')"  >Verificar</button>
         </div>
         </div>
         <div class="modal-footer">
@@ -201,6 +201,9 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
+                          <div>
+                            <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                          </div>
                             <div id="duplicatedcode-txt">
                                 
                             </div>
@@ -217,12 +220,11 @@
                       </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-secondary" @click="reviewAnswer('duplicatedcode')"  >Verificar</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('duplicatedcode')"  >Verificar</button>
             </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
@@ -265,6 +267,9 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
+                            <div>
+                              <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                            </div>
                             <div id="largeclass-txt">
                                 
                             </div>
@@ -281,7 +286,7 @@
                       </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-secondary" @click="reviewAnswer('largeclass')"  >Verificar</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('largeclass')"  >Verificar</button>
             </div>
         </div>
         <div class="modal-footer">
@@ -328,6 +333,9 @@
                       <div class="col">
                         <div class="card" >
                             <div class="card-body">
+                                <div>
+                                  <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                                </div>
                                 <div id="featureenvy-txt">
                                     
                                 </div>
@@ -344,7 +352,7 @@
                           </div>
                       </div>
                     </div>
-                    <button type="button" class="btn btn-secondary" @click="reviewAnswer('featureenvy')"  >Verificar</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('featureenvy')"  >Verificar</button>
                 </div>
             </div>
             <div class="modal-footer">
@@ -400,6 +408,9 @@
                       <div class="col">
                         <div class="card" >
                             <div class="card-body">
+                                <div>
+                                  <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                                </div>
                                 <div id="longmethod-response-txt">
                                     
                                 </div>
@@ -407,7 +418,7 @@
                           </div>
                       </div>
                     </div>
-                    <button type="button" class="btn btn-secondary" @click="reviewAnswer('longmethod')"  >Verificar</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('longmethod')"  >Verificar</button>
                 </div>
             </div>
             <div class="modal-footer">
@@ -455,6 +466,9 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
+                            <div>
+                              <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                            </div>
                             <div id="dataclass-txt">
                                 
                             </div>
@@ -471,7 +485,7 @@
                       </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-secondary" @click="reviewAnswer('dataclass')"  >Verificar</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('dataclass')"  >Verificar</button>
             </div>
         </div>
         <div class="modal-footer">
@@ -519,6 +533,9 @@
                       <div class="col">
                         <div class="card" >
                             <div class="card-body">
+                                <div>
+                                  <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                                </div>
                                 <div id="deadcode-txt">
                                     
                                 </div>
@@ -535,7 +552,7 @@
                           </div>
                       </div>
                     </div>
-                    <button type="button" class="btn btn-secondary" @click="reviewAnswer('deadcode')"  >Verificar</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('deadcode')"  >Verificar</button>
                 </div>
             </div>
             <div class="modal-footer">
@@ -582,6 +599,9 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
+                            <div>
+                              <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                            </div>
                             <div id="swissarmyknife-txt">
                                 
                             </div>
@@ -598,7 +618,7 @@
                       </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-secondary" @click="reviewAnswer('swissarmyknife')"  >Verificar</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('swissarmyknife')"  >Verificar</button>
             </div>
         </div>
         <div class="modal-footer">
@@ -645,6 +665,9 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
+                            <div>
+                              <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                            </div>
                             <div id="longparameters-txt">
                                 
                             </div>
@@ -661,7 +684,7 @@
                       </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-secondary" @click="reviewAnswer('longparameters')"  >Verificar</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('longparameters')"  >Verificar</button>
             </div>
         </div>
         <div class="modal-footer">
@@ -705,7 +728,7 @@
         </div>
         <div class="modal-body modal-body-points">
           <div class="container-points">
-            <span class="title-points cl-blue">Todo el Mundo se Puede equivocar {{user.attemps}} </span>
+            <span class="title-points cl-blue">Todo el Mundo se Puede equivocar</span>
             <div class="content-img imgPoints">
               <img src="img/robot-points.png" alt="Falta de Puntos">
             </div>
@@ -730,7 +753,7 @@
         </div>
         <div class="modal-body modal-body-points">
           <div class="container-points">
-            <span class="title-points cl-blue">Ohh eres un Experto en esto!! {{user.attemps}} </span>
+            <span class="title-points cl-blue">Ohh eres un Experto en esto!! ganaste 10 puntos</span>
             <div class="content-img imgPoints">
               <img src="img/robot-happy.png" alt="Falta de Puntos">
             </div>
@@ -757,7 +780,7 @@
             <div class="container-fluid" v-show="!refusedbequestConfig.showChallenge">
                 <div class="row">
                   <div class="col">
-                    <div class="card" >
+                    <div class="card card2" >
                         <img src="img/legacy.png" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">Descripcion</h5>
@@ -767,7 +790,7 @@
                       </div>
                   </div>
                   <div class="col">
-                    <div class="card" >
+                    <div class="card card2" >
                         <img src="img/refused-bequest-03.png" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">Tratamiento</h5>
@@ -784,6 +807,9 @@
                   <div class="col">
                     <div class="card" >
                         <div class="card-body">
+                            <div>
+                              <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                            </div>
                             <div id="refusedbequest-txt">
                                 
                             </div>
@@ -800,7 +826,7 @@
                       </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-secondary" @click="reviewAnswer('refusedbequest')"  >Verificar</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="reviewAnswer('refusedbequest')"  >Verificar</button>
             </div>
         </div>
         <div class="modal-footer">

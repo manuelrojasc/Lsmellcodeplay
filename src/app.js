@@ -26,6 +26,7 @@ const app =Vue.createApp({
             this.commentsConfig.showChallenge = true; 
 
             setTimeout(() => {
+              document.getElementById('comment-txt').innerHTML='';
               this.commentsConfig.editor = CodeMirror(document.getElementById('comment-txt'),{
                 value: txtCode,
                 mode: "text/x-java",
@@ -35,7 +36,7 @@ const app =Vue.createApp({
             }, 300);
             
             this.commentsConfig.responseEditor = CodeMirror(document.getElementById('comment-response-txt'),{
-              value: '',
+            value: '',
             mode: "text/x-java",
             lineNumbers:true,
             theme: 'mbo',
@@ -46,31 +47,34 @@ const app =Vue.createApp({
             let txtCode=await txt.text();
             this.duplicatedConfig.showChallenge = true;
             setTimeout(() => {
-            this.duplicatedConfig.editor = CodeMirror(document.getElementById('duplicatedcode-txt'),{
-                value: txtCode,
-                mode: "text/x-java",
-                lineNumbers:true,
-                theme: 'mbo',
-             });
+              document.getElementById('duplicatedcode-txt').innerHTML='';
+              this.duplicatedConfig.editor = CodeMirror(document.getElementById('duplicatedcode-txt'),{
+                  value: txtCode,
+                  mode: "text/x-java",
+                  lineNumbers:true,
+                  theme: 'mbo',
+              });
             }, 300);
+
             this.duplicatedConfig.responseEditor = CodeMirror(document.getElementById('duplicatedcode-response-txt'),{
-            value: '',
-            mode: "text/x-java",
-            lineNumbers:true,
-            theme: 'mbo',
-            });  
+              value: '',
+              mode: "text/x-java",
+              lineNumbers:true,
+              theme: 'mbo',
+              });   
         },
         async showDeadCodeChallenge(){
             let txt=await fetch('./challenge/deadcodeexercises.txt');
             let txtCode=await txt.text();
             this.deadcodeConfig.showChallenge = true;
             setTimeout(() => {
-            this.deadcodeConfig.editor = CodeMirror(document.getElementById('deadcode-txt'),{
-                value: txtCode,
-                mode: "text/x-java",
-                lineNumbers:true,
-                theme: 'mbo',
-             });
+              document.getElementById('deadcode-txt').innerHTML='';
+              this.deadcodeConfig.editor = CodeMirror(document.getElementById('deadcode-txt'),{
+                  value: txtCode,
+                  mode: "text/x-java",
+                  lineNumbers:true,
+                  theme: 'mbo',
+              });
             }, 300);
             this.deadcodeConfig.responseEditor = CodeMirror(document.getElementById('deadcode-response-txt'),{
               value: '',
@@ -84,12 +88,13 @@ const app =Vue.createApp({
             let txtCode=await txt.text();
             this.dataclassConfig.showChallenge = true;
             setTimeout(() => {
-            this.dataclassConfig.editor = CodeMirror(document.getElementById('dataclass-txt'),{
-                value: txtCode,
-                mode: "text/x-java",
-                lineNumbers:true,
-                theme: 'mbo',
-             });
+              document.getElementById('dataclass-txt').innerHTML='';
+              this.dataclassConfig.editor = CodeMirror(document.getElementById('dataclass-txt'),{
+                  value: txtCode,
+                  mode: "text/x-java",
+                  lineNumbers:true,
+                  theme: 'mbo',
+              });
             }, 300);
             this.dataclassConfig.responseEditor = CodeMirror(document.getElementById('dataclass-response-txt'),{
               value: '',
@@ -103,12 +108,13 @@ const app =Vue.createApp({
             let txtCode=await txt.text();
             this.longmethodConfig.showChallenge = true;
             setTimeout(() => {
-            this.longmethodConfig.editor = CodeMirror(document.getElementById('longmethod-txt'),{
-                value: txtCode,
-                mode: "text/x-java",
-                lineNumbers:true,
-                theme: 'mbo',
-             });
+              document.getElementById('longmethod-txt').innerHTML='';
+              this.longmethodConfig.editor = CodeMirror(document.getElementById('longmethod-txt'),{
+                  value: txtCode,
+                  mode: "text/x-java",
+                  lineNumbers:true,
+                  theme: 'mbo',
+              });
             }, 300);
             this.longmethodConfig.responseEditor = CodeMirror(document.getElementById('longmethod-response-txt'),{
               value: '',
@@ -122,12 +128,13 @@ const app =Vue.createApp({
             let txtCode=await txt.text();
             this.swissarmyknifeConfig.showChallenge = true;
             setTimeout(() => {
-            this.swissarmyknifeConfig.editor = CodeMirror(document.getElementById('swissarmyknife-txt'),{
-                value: txtCode,
-                mode: "text/x-java",
-                lineNumbers:true,
-                theme: 'mbo',
-             });
+              document.getElementById('swissarmyknife-txt').innerHTML='';
+              this.swissarmyknifeConfig.editor = CodeMirror(document.getElementById('swissarmyknife-txt'),{
+                  value: txtCode,
+                  mode: "text/x-java",
+                  lineNumbers:true,
+                  theme: 'mbo',
+              });
             }, 300);
             this.swissarmyknifeConfig.responseEditor = CodeMirror(document.getElementById('swissarmyknife-response-txt'),{
               value: '',
@@ -141,12 +148,13 @@ const app =Vue.createApp({
             let txtCode=await txt.text();
             this.refusedbequestConfig.showChallenge = true;
             setTimeout(() => {
-            this.refusedbequestConfig.editor = CodeMirror(document.getElementById('refusedbequest-txt'),{
-                value: txtCode,
-                mode: "text/x-java",
-                lineNumbers:true,
-                theme: 'mbo',
-             });
+              document.getElementById('refusedbequest-txt').innerHTML='';
+              this.refusedbequestConfig.editor = CodeMirror(document.getElementById('refusedbequest-txt'),{
+                  value: txtCode,
+                  mode: "text/x-java",
+                  lineNumbers:true,
+                  theme: 'mbo',
+              });
             }, 300);
             this.refusedbequestConfig.responseEditor = CodeMirror(document.getElementById('refusedbequest-response-txt'),{
               value: '',
@@ -160,12 +168,13 @@ const app =Vue.createApp({
             let txtCode=await txt.text();
             this.longparametersConfig.showChallenge = true;
             setTimeout(() => {
-            this.longparametersConfig.editor = CodeMirror(document.getElementById('longparameters-txt'),{
-                value: txtCode,
-                mode: "text/x-java",
-                lineNumbers:true,
-                theme: 'mbo',
-             });
+              document.getElementById('longparameters-txt').innerHTML='';
+              this.longparametersConfig.editor = CodeMirror(document.getElementById('longparameters-txt'),{
+                  value: txtCode,
+                  mode: "text/x-java",
+                  lineNumbers:true,
+                  theme: 'mbo',
+              });
             }, 300);
             this.longparametersConfig.responseEditor = CodeMirror(document.getElementById('longparameters-response-txt'),{
               value: '',
@@ -179,18 +188,19 @@ const app =Vue.createApp({
             let txtCode=await txt.text();
             this.featureenvyConfig.showChallenge = true;
             setTimeout(() => {
-            this.featureenvyConfig.editor = CodeMirror(document.getElementById('featureenvy-txt'),{
-                value: txtCode,
-                mode: "text/x-java",
-                lineNumbers:true,
-                theme: 'mbo',
-             });
+              document.getElementById('featureenvy-txt').innerHTML='';
+              this.featureenvyConfig.editor = CodeMirror(document.getElementById('featureenvy-txt'),{
+                  value: txtCode,
+                  mode: "text/x-java",
+                  lineNumbers:true,
+                  theme: 'mbo',
+              });
             }, 300);
             this.featureenvyConfig.responseEditor = CodeMirror(document.getElementById('featureenvy-response-txt'),{
               value: '',
-            mode: "text/x-java",
-            lineNumbers:true,
-            theme: 'mbo',
+              mode: "text/x-java",
+              lineNumbers:true,
+              theme: 'mbo',
             });  
         },
         async showLargeClassChallenge(){
@@ -198,14 +208,36 @@ const app =Vue.createApp({
             let txtCode=await txt.text();
             this.largeclassConfig.showChallenge = true;
             setTimeout(() => {
-            this.largeclassConfig.editor = CodeMirror(document.getElementById('largeclass-txt'),{
-                value: txtCode,
-                mode: "text/x-java",
-                lineNumbers:true,
-                theme: 'mbo',
-             });
+              document.getElementById('largeclass-txt').innerHTML='';
+              this.largeclassConfig.editor = CodeMirror(document.getElementById('largeclass-txt'),{
+                  value: txtCode,
+                  mode: "text/x-java",
+                  lineNumbers:true,
+                  theme: 'mbo',
+              });
             }, 300);
             this.largeclassConfig.responseEditor = CodeMirror(document.getElementById('largeclass-response-txt'),{
+              value: '',
+            mode: "text/x-java",
+            lineNumbers:true,
+            theme: 'mbo',
+            });  
+        },
+
+        async showSwissArmyknifeChallenge(){
+          let txt=await fetch('./challenge/largeclassexercises.txt');
+            let txtCode=await txt.text();
+            this.swissarmyknifeConfig.showChallenge = true;
+            setTimeout(() => {
+              document.getElementById('swissarmyknife-txt').innerHTML='';
+              this.swissarmyknifeConfig.editor = CodeMirror(document.getElementById('swissarmyknife-txt'),{
+                  value: txtCode,
+                  mode: "text/x-java",
+                  lineNumbers:true,
+                  theme: 'mbo',
+              });
+            }, 300);
+            this.swissarmyknifeConfig.responseEditor = CodeMirror(document.getElementById('swissarmyknife-response-txt'),{
               value: '',
             mode: "text/x-java",
             lineNumbers:true,
@@ -311,6 +343,7 @@ const app =Vue.createApp({
 
         reviewDuplicatedCodeAnswer(){
             let code = this.duplicatedcodeConfig.responseEditor.getValue();
+            console.log(code);
             //analizar el codigo escrito y encontrar 
             console.log(code);
             this.duplicatedcodeConfig.showChallenge=false;
