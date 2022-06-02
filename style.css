@@ -21,6 +21,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  accent-color: #7c4dff;
 }
 
 .title,
@@ -572,6 +573,26 @@ body{
 .card-text{
   text-align: justify;
 }
+
+.CodeMirror-scroll{
+  pointer-events: none !important;
+}
+.modal-xl{
+  display: flex;
+  justify-content: center;
+}
+.modal-xl > .modal-content{
+  width: 98vw;
+}
+.cardContent{
+  display: flex;
+  justify-content: space-between;
+}
+.cardContent-code{width: 70%;}
+.CodeMirror {height: 68vh;}
+.cardContent-form{width: 28%;}
+
+.mt-10{margin-top: 10px;}
 @keyframes slidein {
   0% {right: 55px;}
   30%{ transform: rotate(30deg);}

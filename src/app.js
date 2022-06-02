@@ -26,6 +26,7 @@ const app =Vue.createApp({
             this.commentsConfig.showChallenge = true; 
 
             setTimeout(() => {
+              document.getElementById('comment-txt').innerHTML='';
               this.commentsConfig.editor = CodeMirror(document.getElementById('comment-txt'),{
                 value: txtCode,
                 mode: "text/x-java",

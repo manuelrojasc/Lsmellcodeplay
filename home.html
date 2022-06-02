@@ -134,26 +134,25 @@
               <div class="col">
                 <div class="card" >
                     <div class="card-body">
-                        <div>
-                          <p class="text-left b">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
-                        </div>
-                        <div id="comment-txt">
-                            
-                        </div>
-                    </div>
-                  </div>
-              </div>
-              <div class="col">
-                <div class="card" >
-                    <div class="card-body">
-                        <div id="comment-response-txt">
-                            
+                        <div class="cardContent">
+                          <div id="comment-txt" class="cardContent-code"></div>
+                          <div class="cardContent-form">
+                            <p class="">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                            <form action="#">
+                              <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                              <label for="vehicle1"> I have a bike</label><br>
+                              <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                              <label for="vehicle2"> I have a car</label><br>
+                              <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                              <label for="vehicle3"> I have a boat</label><br>
+                              <button type="button" class="btn btn-secondary mt-10" @click="reviewAnswer('comments')"  >Verificar</button>
+                            </form>
+                          </div>
                         </div>
                     </div>
                   </div>
               </div>
             </div>
-            <button type="button" class="btn btn-secondary" @click="reviewAnswer('comments')"  >Verificar</button>
         </div>
         </div>
         <div class="modal-footer">
