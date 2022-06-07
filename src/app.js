@@ -3,6 +3,7 @@ var goodModal = new bootstrap.Modal(document.getElementById('good'));
 const app =Vue.createApp({
    data() {
       return {
+        countDown: 10,
         user:{name:'',points:0,attemps:3,answers:[],initModal:true},
         commentsConfig:{showChallenge:false,editor:null,responseEditor:null},
         duplicatedConfig:{showChallenge:false,editor:null,responseEditor:null},
@@ -18,7 +19,7 @@ const app =Vue.createApp({
     },
     methods:{
         init(){
-
+           
         },
         resetModalComment(){
             this.commentsConfig.showChallenge=false;
@@ -63,6 +64,7 @@ const app =Vue.createApp({
                 lineNumbers:true,
                 theme: 'mbo',
              });
+             this.countDownTimer();
             }, 300);  
         },
         async showDuplicatedCodeChallenge(){
@@ -386,6 +388,15 @@ const app =Vue.createApp({
           // let modalInit = document.getElementById('wrapperInit');
           // modalInit.classList.add('inactive');
         },
+        countDownTimer () {
+          if(this.countDown==0){console.log("termino el tiempo");}
+          if (this.countDown > 0) {
+              setTimeout(() => {
+                  this.countDown -= 1
+                  this.countDownTimer()
+              }, 1000)
+          }
+      }
 
     },
     mounted() {
