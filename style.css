@@ -8,9 +8,12 @@
   --font-seze-nav       : 1.3rem;
 
   --size-hexa           : 145px;
-  --background-hexa     : #2EB5E0;
-  --hexa-inactive       : #bdbdbd;
-  --form-control-color  : #7c4dff;;
+  --background-hexa     :#2EB5E0;
+  --hexa-inactive       :#bdbdbd;
+  --form-control-color  :#7c4dff;;
+
+  --color-label         :#ff1744;
+  --color-label-hover   :#ff5252;
 }
 html {
   font-family: 'Lato', sans-serif;
@@ -554,14 +557,7 @@ body{
 .card-img{
   width: 50%;
 }
-.card2{
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  flex-basis: 48%;
-  padding: 8px;
-  box-shadow: 0.5px 0.5px 3px #9575cd;
-}
+
 .modal-header{
   padding: 0.35rem;
   display: flex;
@@ -587,11 +583,61 @@ body{
 }
 .cardContent{
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
-.cardContent-code{width: 70%;}
+.cardbody,.cardContent-code{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.cardbodyItem{
+  width: 33%;
+}
+.cardbodytiming{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.timing{
+  width: 150px;
+  height: 150px;
+  background-color: #311b92;
+  font-size: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  box-shadow: 2px 2px 5px #000;
+  font-weight: 800;
+}
+
+.cardheader{
+  text-align: center;
+}
+.cardheader-text{
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px #455a64;
+}
+.cardContent-code{width: 50%;}
+.code-img{
+  width: 500px;
+  transition: all 0.8s;
+  z-index: 100;
+}
+.code-img:hover{
+  transform: scale(1.8);
+}
+
+.cardContentForm{
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 5px;
+}
+
 .CodeMirror {height: 68vh;}
-.cardContent-form{width: 28%;flex-basis: 29%;}
+
 input[type="radio"]{
   padding: 5px;
 }
@@ -634,6 +680,42 @@ label.form-control:hover{
   cursor: pointer;
   background-color: #ede7f6;
 }
+.form-control{
+  border-radius: 0;
+  padding: 10px 5px; 
+  color: #fff;
+  background-color: var(--color-label);
+  --form-control-color : var(--color-label);
+  
+}
+.form-control, .form-control span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.form-control:hover{
+  background-color: var(--color-label-hover) !important;
+}
+
+.lbl-purple{
+  --color-label       :#aa00ff;
+  --color-label-hover : #d500f9;
+}
+.lbl-blue{
+  --color-label       :#0d47a1;
+  --color-label-hover : #1e88e5;
+}
+.lbl-orange{
+  --color-label       :#d84315;
+  --color-label-hover : #f4511e;
+}
+.fa-solid{
+  margin-right: 15px;
+  font-size: 1.3rem;
+}
+
+
 
 .mt-10{margin-top: 10px;}
 .w-600{font-weight: 600;}

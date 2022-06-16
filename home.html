@@ -20,6 +20,7 @@
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js'></script>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
   </head>
   <body>
@@ -39,7 +40,6 @@
               <input v-model="user.name" placeholder="ingrese alias" />
               <button @click="reviewModalAnswer()"  class="btnInit">Comenzar</button>
             </div> 
-  
           </div>
       </div>
     </div>
@@ -135,17 +135,23 @@
                 <div class="card" >
                     <div class="card-body">
                         <div class="cardContent">
-                          <div id="comment-txt" class="cardContent-code"></div>
+                          <div class="cardheader">
+                            <p class="cardheader-text">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
+                          </div>
+                          <div class="cardbody">
+                            <div class="cardbodyItem cardbodytiming"><div class="timing"><span>20</span></div></div>
+                            <!-- <div id="comment-txt" class="cardContent-code"></div> -->
+                            <div class="cardbodyItem cardContent-code"><img src="img/comentario.jpg" alt="comentario" class="code-img" ></div>
+                            <div class="cardbodyItem "></div>
+                          </div>
                           <div class="cardContent-form card2">
-                            <p class="w-600">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
-                            <form action="#">
-                              <label class="form-control"><input name='input_name' type='radio' value="metodo_largo"> Método Largo</label>
-                              <label class="form-control"><input name='input_name' type='radio' value="comentario"> Comentario</label>
-                              <label class="form-control"><input name='input_name' type='radio' value="clase_larga"> Clase Larga</label>
-                              <label class="form-control"><input name='input_name' type='radio' value="clase_datos"> Clase de Datos</label>
-                              <label class="form-control"><input name='input_name' type='radio' value="nose"> No lo sé</label>
-                              <button type="button" class="btn btn-success mt-10" @click="reviewAnswer('comments')"  >Verificar</button>
+                            <form action="#" class="cardContentForm">
+                              <label class="form-control "><span><input name='input_name' type='radio' value="metodo_largo"> Método Largo</span> <i class="fa-solid fa-circle"></i></label>
+                              <label class="form-control lbl-purple"><span><input name='input_name' type='radio' value="comentario"> Comentario</span> <i class="fa-solid fa-square-full"></i></label>
+                              <label class="form-control lbl-blue"> <span><input name='input_name' type='radio' value="clase_larga"> Clase Larga</span> <i class="fa-solid fa-star"></i></label>
+                              <label class="form-control lbl-orange"> <span><input name='input_name' type='radio' value="clase_datos">Clase de Datos</span> <i class="fa-solid fa-star-and-crescent"></i></label>
                             </form>
+                            <button type="button" class="btn btn-success mt-10" @click="reviewAnswer('comments')"  >Verificar</button>
                           </div>
                         </div>
                     </div>
