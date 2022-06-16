@@ -79,6 +79,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
+              this.countDownTimer();
             }, 300);   
         },
         async showDeadCodeChallenge(){
@@ -93,6 +94,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
+              this.countDownTimer();
             }, 300);  
         },
         async showDataClassChallenge(){
@@ -107,6 +109,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
+              this.countDownTimer();
             }, 300);  
         },
         async showLongMethodChallenge(){
@@ -121,6 +124,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
+              this.countDownTimer();
             }, 300); 
         },
         async showSwissArmyKnaifeChallenge(){
@@ -135,6 +139,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
+              this.countDownTimer();
             }, 300);  
         },
         async showRefusedBequestChallenge(){
@@ -149,6 +154,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
+              this.countDownTimer();
             }, 300); 
         },
         async showLongParametersChallenge(){
@@ -163,6 +169,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
+              this.countDownTimer();
             }, 300); 
         },
         async showFeatureEnvyChallenge(){
@@ -177,6 +184,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
+              this.countDownTimer();
             }, 300);  
         },
         async showLargeClassChallenge(){
@@ -191,6 +199,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
+              this.countDownTimer();
             }, 300);  
         },
 
@@ -206,6 +215,7 @@ const app =Vue.createApp({
                   lineNumbers:true,
                   theme: 'mbo',
               });
+              this.countDownTimer();
             }, 300);  
         },
 

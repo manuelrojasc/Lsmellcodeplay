@@ -32,7 +32,7 @@
           <div class="wrapper-info">
               <h1 class="titleInit">SmellCodePlay</h1>
               <div class="info-text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit culpa necessitatibus eum! Fugit harum possimus reprehenderit odio saepe voluptas. Dignissimos, id modi. Corrupti cum dolor labore doloremque, consequatur unde itaque?
+                SmellCodePlay es un juego orientado a la identificacion de olores de codigo, el cual se desarrolla en una plataforma web,consta de diez niveles en las cuales te encontraras con divertidas explicacion y algunos desafios que se te presentaran para poner a prueba tus habilidades, Que esperas intentalo ahora!!.
               </div>
           </div>
           <div class="wrapper-user">
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary" @click="showCommentChallenge()" v-show="!commentsConfig.showChallenge">Ir al desafio</button>
+                <button type="button" class="btn btn-primary" @click="countDown=20;showCommentChallenge()" v-show="!commentsConfig.showChallenge">Ir al desafio</button>
             </div>
         <div class="container-fluid" v-show="commentsConfig.showChallenge">
             <div class="row">
@@ -171,7 +171,7 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Codigo Duplicado</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Codigo Duplicado <span v-if="duplicatedConfig.showChallenge" style="font-weight: bold;">tiempo:{{countDown }}</span></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -194,7 +194,7 @@
                   </div>
                 </div>
               </div>
-              <button type="button" class="btn btn-primary" @click="showDuplicatedCodeChallenge()" v-show="!duplicatedConfig.showChallenge">Ir al desafio</button>
+              <button type="button" class="btn btn-primary" @click="countDown=20;showDuplicatedCodeChallenge()" v-show="!duplicatedConfig.showChallenge">Ir al desafio</button>
             </div>
             
             <div class="container-fluid" v-show="duplicatedConfig.showChallenge">
@@ -233,7 +233,7 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Clase Larga</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Clase Larga <span v-if="largeclassConfig.showChallenge" style="font-weight: bold;">tiempo:{{countDown }}</span></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -256,7 +256,7 @@
                     </div>
                   </div>
               </div>
-              <button type="button" class="btn btn-primary" @click="showLargeClassChallenge()" v-show="!largeclassConfig.showChallenge">Ir al desafio</button>
+              <button type="button" class="btn btn-primary" @click="countDown=20;showLargeClassChallenge()" v-show="!largeclassConfig.showChallenge">Ir al desafio</button>
             </div>
             <div class="container-fluid" v-show="largeclassConfig.showChallenge">
                 <div class="row">
@@ -294,7 +294,7 @@
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Caracteristica Envidia</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Caracteristica Envidia <span v-if="featureenvyConfig.showChallenge" style="font-weight: bold;">tiempo:{{countDown }}</span></h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -316,7 +316,7 @@
                         </div>
                     </div>
                   </div>
-                  <button type="button" class="btn btn-primary" @click="showFeatureEnvyChallenge()" v-show="!featureenvyConfig.showChallenge">Ir al desafio</button>
+                  <button type="button" class="btn btn-primary" @click="countDown=20;showFeatureEnvyChallenge()" v-show="!featureenvyConfig.showChallenge">Ir al desafio</button>
                 </div>
                 <div class="container-fluid" v-show="featureenvyConfig.showChallenge">
                     <div class="row">
@@ -355,7 +355,7 @@
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Metodo Largo </h5>
+              <h5 class="modal-title" id="exampleModalLabel">Metodo Largo <span v-if="longmethodConfig.showChallenge" style="font-weight: bold;">tiempo:{{countDown }}</span></h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -376,7 +376,7 @@
                         </div>
                     </div>
                   </div>
-                  <button type="button" class="btn btn-primary" @click="showLongMethodChallenge()" v-show="!longmethodConfig.showChallenge">Ir al desafio</button>
+                  <button type="button" class="btn btn-primary" @click="countDown=20;showLongMethodChallenge()" v-show="!longmethodConfig.showChallenge">Ir al desafio</button>
                 </div>
                 <div class="container-fluid" v-show="longmethodConfig.showChallenge">
                     <div class="row">
@@ -415,7 +415,7 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Clase de Datos</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Clase de Datos <span v-if="dataclassConfig.showChallenge" style="font-weight: bold;">tiempo:{{countDown }}</span></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -437,7 +437,7 @@
                     </div>
                 </div>
               </div>
-              <button type="button" class="btn btn-primary" @click="showDataClassChallenge()" v-show="!dataclassConfig.showChallenge">Ir al desafio</button>
+              <button type="button" class="btn btn-primary" @click="countDown=20;showDataClassChallenge()" v-show="!dataclassConfig.showChallenge">Ir al desafio</button>
             </div>
             <div class="container-fluid" v-show="dataclassConfig.showChallenge">
                 <div class="row">
@@ -475,7 +475,7 @@
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Flujo de lava</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Flujo de lava <span v-if="deadcodeConfig.showChallenge" style="font-weight: bold;">tiempo:{{countDown }}</span></h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -498,7 +498,7 @@
                         </div>
                     </div>
                   </div>  
-                  <button type="button" class="btn btn-primary" @click="showDeadCodeChallenge()" v-show="!deadcodeConfig.showChallenge">Ir al desafio</button>
+                  <button type="button" class="btn btn-primary" @click="countDown=20;showDeadCodeChallenge()" v-show="!deadcodeConfig.showChallenge">Ir al desafio</button>
                 </div>
                 <div class="container-fluid" v-show="deadcodeConfig.showChallenge">
                     <div class="row">
@@ -536,7 +536,7 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Navaja del ejercito suizo</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Navaja del ejercito suizo <span v-if="swissarmyknifeConfig.showChallenge" style="font-weight: bold;">tiempo:{{countDown }}</span></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -558,7 +558,7 @@
                     </div>
                 </div>
             </div>  
-            <button type="button" class="btn btn-primary" @click="showSwissArmyknifeChallenge()" v-show="!swissarmyknifeConfig.showChallenge">Ir al desafio</button>
+            <button type="button" class="btn btn-primary" @click="countDown=20;showSwissArmyknifeChallenge()" v-show="!swissarmyknifeConfig.showChallenge">Ir al desafio</button>
             </div>
             <div class="container-fluid" v-show="swissarmyknifeConfig.showChallenge">
                 <div class="row">
@@ -596,7 +596,7 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Lista de paramatros larga</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Lista de paramatros larga <span v-if="longparametersConfig.showChallenge" style="font-weight: bold;">tiempo:{{countDown }}</span></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -618,7 +618,7 @@
                     </div>
                 </div>
               </div>  
-              <button type="button" class="btn btn-primary" @click="showLongParametersChallenge()" v-show="!longparametersConfig.showChallenge">Ir al desafio</button>
+              <button type="button" class="btn btn-primary" @click="countDown=20;showLongParametersChallenge()" v-show="!longparametersConfig.showChallenge">Ir al desafio</button>
             </div>
             <div class="container-fluid" v-show="longparametersConfig.showChallenge">
                 <div class="row">
@@ -727,7 +727,7 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Legado rechazado</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Legado rechazado <span v-if="refusedbequestConfig.showChallenge" style="font-weight: bold;">tiempo:{{countDown }}</span></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -755,7 +755,7 @@
                   </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary" @click="showRefusedBequestChallenge()" v-show="!refusedbequestConfig.showChallenge">Ir al desafio</button>
+            <button type="button" class="btn btn-primary" @click="countDown=20;showRefusedBequestChallenge()" v-show="!refusedbequestConfig.showChallenge">Ir al desafio</button>
             <div class="container-fluid" v-show="refusedbequestConfig.showChallenge">
                 <div class="row">
                   <div class="col">
