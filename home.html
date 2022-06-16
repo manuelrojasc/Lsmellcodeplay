@@ -105,7 +105,7 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Comentarios <span v-if="commentsConfig.showChallenge" style="font-weight: bold;">tiempo:{{countDown }}</span></h5>
+          <h5 class="modal-title" id="exampleModalLabel">Comentarios</h5>
           <button tyzpe="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -139,7 +139,7 @@
                             <p class="cardheader-text">A continuacion se le presenta un fragmento de codigo que contiene olores de codigo. Identifique a que tipo pertenece:</p>
                           </div>
                           <div class="cardbody">
-                            <div class="cardbodyItem cardbodytiming"><div class="timing"><span>20</span></div></div>
+                            <div class="cardbodyItem cardbodytiming"><div class="timing"><span>{{countDown }}</span></div></div>
                             <!-- <div id="comment-txt" class="cardContent-code"></div> -->
                             <div class="cardbodyItem cardContent-code"><img src="img/comentario.jpg" alt="comentario" class="code-img" ></div>
                             <div class="cardbodyItem "></div>

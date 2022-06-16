@@ -57,7 +57,7 @@ const app =Vue.createApp({
             this.commentsConfig.showChallenge = true; 
 
             setTimeout(() => {
-              document.getElementById('comment-txt').innerHTML='';
+             // document.getElementById('comment-txt').innerHTML='';
               this.commentsConfig.editor = CodeMirror(document.getElementById('comment-txt'),{
                 value: txtCode,
                 mode: "text/x-java",
@@ -399,6 +399,7 @@ const app =Vue.createApp({
           // modalInit.classList.add('inactive');
         },
         countDownTimer () {
+          console.log(this.countDown);
           if(this.countDown==0){console.log("termino el tiempo");}
           if (this.countDown > 0) {
               setTimeout(() => {
